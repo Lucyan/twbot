@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121008192106) do
+ActiveRecord::Schema.define(:version => 20130123212231) do
 
   create_table "bot_ciudades", :force => true do |t|
     t.integer  "bot_id"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20121008192106) do
     t.integer  "cantidad_seguir"
     t.integer  "verificar_seguido"
     t.integer  "followers_count"
+    t.integer  "user_id"
   end
 
   create_table "ciudads", :force => true do |t|

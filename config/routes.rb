@@ -9,6 +9,7 @@
   match '/bot/on/:id' => 'bots#bot_on', :as => '/bot/on'
   match '/bot/off/:id' => 'bots#bot_off', :as => '/bot/off'
   match '/bot/login' => 'bots#login', :as => '/bot/login', :via => :post
+  match '/logout' => 'bots#logout'
 
   match '/bot/:id/palabras' => 'bots#palabras', :as => '/bot/palabras'
   match '/bot/:id/palabras/agregar' => 'bots#agregar_palabra', :as => '/bot/agregar/palabra', :via => :get
@@ -33,6 +34,9 @@
   match "/ciudades/editar/:id" => "ciudades#editar", :as => '/ciudades/editar', :via => :get
   match "/ciudades/editar/:id" => "ciudades#actualizar", :as => '/ciudades/editar', :via => :put
   match "/ciudades/eliminar/:id" => "ciudades#eliminar", :as => '/ciudades/eliminar'
+
+  match "/registro" => "bots#registrar", :as => '/registro', :via => :get
+  match "/registro" => "bots#nuevo_usuario", :as => '/registro', :via => :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

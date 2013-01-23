@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :autentificacion, :except => :login
+  before_filter :autentificacion, :except => [:login, :registrar, :nuevo_usuario]
 
   # verifica autentificación
   def autentificacion
@@ -27,4 +27,31 @@ class ApplicationController < ActionController::Base
       render :template => 'bots/login'
     end
   end
+
+  # Logout
+  def logout
+    reset_session
+    redirect_to root_path
+  end
+
+  # Registro
+  def registrar
+    if session[:login]
+      redirect_to root_path
+    else
+      @user = User.new
+    end
+  end
+
+  def nuevo_usuario
+    @user = User.new(params[:user])
+    if @user.valid?
+      @user.save
+      redirect_to(root_path, :notice => "Usuario creado, ya puedes hacer login")
+    else
+      flash[:error] = "Error en los datos ingresados"
+      render 'registrar'
+    end
+  end
+
 end

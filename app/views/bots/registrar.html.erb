@@ -1,0 +1,50 @@
+<% provide(:title, 'Nuevo Usuario') %>
+<div class="center hero-unit">
+  	<h1>Nuevo Usuario</h1>
+  	<% if flash[:error] %>
+      	<div class="mensajes_error">
+      		<p><%= flash[:error] %><p>
+      			<% if @user.errors.any? %>
+					  <div id="error_explanation">
+						    <div class="alert alert-error">
+						      	The form contains <%= pluralize(@user.errors.count, "error") %>.
+						    </div>
+						    <ul>
+							    <% @user.errors.full_messages.each do |msg| %>
+							      	<li>* <%= msg %></li>
+							    <% end %>
+						    </ul>
+					  </div>
+				<% end %>
+      	</div>
+    <% end %>
+  	<div class="form_puntos origen">
+		<%= form_for @user, :url => registro_path do |form| %>
+			<fieldset class="fields">
+				<div class="field control-group">
+					<%= form.label :name %>
+					<%= form.text_field :name %>
+				</div>
+
+				<div class="field control-group">
+					<%= form.label :email %>
+					<%= form.text_field :email %>
+				</div>
+
+				<div class="field control-group">
+					<%= form.label :password %>
+					<%= form.password_field :password %>
+				</div>
+
+				<div class="field control-group">
+					<%= form.label :password_confirmation %>
+					<%= form.password_field :password_confirmation %>
+				</div>
+			</fieldset>
+
+			<fieldset class="actions">
+				<%= form.submit "Guardar", class: "btn btn-large btn-primary" %>
+			</fieldset>
+		<% end %>
+	</div>
+</div>

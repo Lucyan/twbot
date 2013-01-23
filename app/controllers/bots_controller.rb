@@ -9,7 +9,9 @@ class BotsController < ApplicationController
   # Despliega Listado todos los Bots
   def index
     session[:filtro] = nil
-  	@bots = Bot.all
+  	#@bots = Bot.all
+    @user = User.find(session[:login]);
+    @bots = @user.bots;
   end
 
   # Despliega Formulario para gregar nuevo Bot
@@ -25,6 +27,7 @@ class BotsController < ApplicationController
     @bot.palabra_indice = 1
     @bot.palabra_maximo = 1
     @bot.ciudad_indice = 1
+    @bot.user = session[:login]
     @twitter = Twitter::Client.new(
       :oauth_token => @bot.tw_token,
       :oauth_token_secret => @bot.tw_secret
