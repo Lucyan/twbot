@@ -38,6 +38,20 @@
 						<%= form.text_field :verificar_seguido, {class: "span1", value: "2"} %><span class="add-on">Dias</span>
 					</div>
 				</div>
+
+				<div class="field control-group">
+					<%= form.label :frase_al_seguir, "Frase de respuesta cuando el Bot sigue a una persona" %>
+					<div class="input-prepend">
+						<%= form.text_field :frase_al_seguir %>
+					</div>
+				</div>
+
+				<div class="field control-group">
+					<%= form.label :frase_cuando_siguen, "Frase de respuesta cuando una persona sigue al Bot" %>
+					<div class="input-prepend">
+						<%= form.text_field :frase_cuando_siguen %>
+					</div>
+				</div>
 			</fieldset>
 
 			<fieldset class="actions">

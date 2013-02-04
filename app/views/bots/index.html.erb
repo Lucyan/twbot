@@ -23,6 +23,7 @@
                 <td>
                     <div>Seguir por Hora: <%= bot.cantidad_seguir %></div>
                     <div>Verificar Cada: <%= bot.verificar_seguido %> dias</div>
+                    <div>Última Renovación: <%= bot.fecha_renovacion.strftime("%d/%m/%Y") %></div>
                 </td>
                 <td>
                     <div>Inicial: <%= bot.followers_count %></div>

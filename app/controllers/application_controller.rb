@@ -45,12 +45,15 @@ class ApplicationController < ActionController::Base
 
   def nuevo_usuario
     @user = User.new(params[:user])
+    @user.cantidad_bots = 1
+    # Se agrega perfil de usuario (0)
+    @user.perfil = 0
     if @user.valid?
       @user.save
       redirect_to(root_path, :notice => "Usuario creado, ya puedes hacer login")
     else
       flash[:error] = "Error en los datos ingresados"
-      render 'registrar'
+      render 'bots/registrar'
     end
   end
 

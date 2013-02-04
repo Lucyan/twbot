@@ -1,4 +1,6 @@
   Twbot::Application.routes.draw do
+  get "users/index"
+
   root to: 'bots#index'
 
   match '/bot/nuevo' => 'bots#nuevo', :as => '/bot/nuevo', :via => :get
@@ -37,6 +39,8 @@
 
   match "/registro" => "bots#registrar", :as => '/registro', :via => :get
   match "/registro" => "bots#nuevo_usuario", :as => '/registro', :via => :post
+
+   match "/usuarios" => "users#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

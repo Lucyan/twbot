@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130123212231) do
+ActiveRecord::Schema.define(:version => 20130131213813) do
 
   create_table "bot_ciudades", :force => true do |t|
     t.integer  "bot_id"
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(:version => 20130123212231) do
     t.string   "tw_token"
     t.string   "tw_secret"
     t.integer  "estado"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.integer  "siguiendo"
     t.integer  "seguidores"
     t.integer  "palabra_indice"
@@ -44,6 +44,9 @@ ActiveRecord::Schema.define(:version => 20130123212231) do
     t.integer  "verificar_seguido"
     t.integer  "followers_count"
     t.integer  "user_id"
+    t.date     "fecha_renovacion"
+    t.string   "frase_al_seguir"
+    t.string   "frase_cuando_siguen"
   end
 
   create_table "ciudads", :force => true do |t|
@@ -60,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20130123212231) do
     t.string   "palabra"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "frase"
   end
 
   create_table "tweets", :force => true do |t|
@@ -71,10 +75,11 @@ ActiveRecord::Schema.define(:version => 20130123212231) do
     t.string   "tw_text"
     t.string   "tw_created_at"
     t.integer  "estado"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "palabra"
     t.string   "ciudad"
+    t.integer  "mensaje_enviado"
   end
 
   create_table "users", :force => true do |t|
@@ -83,6 +88,8 @@ ActiveRecord::Schema.define(:version => 20130123212231) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
+    t.integer  "cantidad_bots"
+    t.integer  "perfil"
   end
 
 end

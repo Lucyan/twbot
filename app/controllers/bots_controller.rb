@@ -16,6 +16,13 @@ class BotsController < ApplicationController
 
   # Despliega Formulario para gregar nuevo Bot
   def nuevo
+    user = User.find(session[:login]);
+    bots = user.bots
+    logger.debug "Cantidad bot :#{bots.count}"
+
+    if bots.count == user.cantidad_bots
+      redirect_to(root_path, :notice => "No puedes agregar mas bots, tu cuenta esta limitada a #{bots.count} bots.")
+    end
   end
 
   # Guarda el nuevo Bot en la base de datos
@@ -33,6 +40,11 @@ class BotsController < ApplicationController
       :oauth_token_secret => @bot.tw_secret
     )
     @bot.followers_count = @twitter.user(@bot.tw_cuenta).follower_count
+
+    # Se agrega fecha de renovación para controlar uso por fechas (1 mes)
+    fecha = Time.new
+    @bot.fecha_renovacion = fecha.strftime("%d-%m-%Y")
+
   	if @bot.valid?
   		@bot.save
   		redirect_to(root_path, :notice => "Bot creado OK")
@@ -48,16 +60,24 @@ class BotsController < ApplicationController
   	begin
 	  	auth = request.env["omniauth.auth"]
 	  	if auth['credentials']['token']
-		  	@bot = Bot.new(nombre: auth['info']['name'], tw_cuenta: auth['info']['nickname'], tw_token: auth['credentials']['token'], tw_secret: auth['credentials']['secret'], estado: 0)
-		  	render 'nuevo2'
-		else
-			flash[:error] = "Error al autorizar al bot, intentalo nuevamente"
-			render 'nuevo'
-		end
-	rescue Exception
-		flash[:error] = "Error al autorizar al bot, intentalo nuevamente"
-		render 'nuevo'
-	end
+        existe = Bot.find(:first, :conditions => {tw_cuenta: auth['info']['nickname']})
+        logger.debug "The object is #{existe}"
+        if existe
+          flash[:error] = "ERROR, la cuenta que estas tratando de utilizar ya esta registrada en nuestros sistemas, recuerda que no puedes diplicar cuentas, si estas seguro que deseas utilizar esta cuenta, contactate con los administradores"
+          render 'nuevo'
+        else
+          @bot = Bot.new(nombre: auth['info']['name'], tw_cuenta: auth['info']['nickname'], tw_token: auth['credentials']['token'], tw_secret: auth['credentials']['secret'], estado: 0)
+          render 'nuevo2'
+        end
+		  else
+		    flash[:error] = "Error al autorizar al bot, intentalo nuevamente"
+        render 'nuevo'
+		  end
+    rescue Exception => exc
+      logger.debug "Error :#{exc.message}"
+		  flash[:error] = "Error al autorizar al bot, intentalo nuevamente"
+		  render 'nuevo'
+    end
   end
 
   # En caso de fallar la autentificación, muestra error en pantalla

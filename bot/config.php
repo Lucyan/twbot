@@ -1,7 +1,7 @@
 <?php
 
 // Configuración Base de Datos
-$con = mysql_connect('localhost', 'projects_ror', 'enSSwEJ6GZ~(');
+$con = mysql_connect('localhost', 'root', 'root');
 mysql_select_db('projects_twbot', $con);
 mysql_set_charset('utf8', $con);
 

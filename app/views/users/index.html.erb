@@ -1,0 +1,26 @@
+<% provide(:title, 'Administración de Usuarios') %>
+<div class="center hero-unit">
+	<h1>Administración de usuarios</h1>
+	<table>
+    	<tr>
+            <th>Nombre</th>
+            <th>E-Mail</th>
+            <th>Cantidad Bots</th>
+            <th>Perfil</th>
+    	</tr>
+		<% @usuarios.each do |usuario| %>
+			<tr>
+				<td><%= usuario.name %></td>
+				<td><%= usuario.email %></td>
+				<td><%= usuario.cantidad_bots %></td>
+				<td>
+					<% if usuario.perfil == 1 %>
+						Administrador
+					<% else %>
+						Usuario
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+</div>

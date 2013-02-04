@@ -26,12 +26,17 @@ while ($bot = mysql_fetch_assoc($bots)) {
     $max_seguir = $bot['cantidad_seguir'];
     $cantidad_seguir = 0;
 
+    // Add: funcionalidad mensajes
+    $mensaje_bot = $bot['frase_al_seguir'];
+
     $palabras = mysql_query("SELECT * FROM palabras WHERE bot_id = '{$bot['id']}';");
 
     $arrayPalabras = array();
     $index = 1;
     while ($palabra = mysql_fetch_assoc($palabras)) {
-        $arrayPalabras[$index] = $palabra['palabra'];
+        $arrayPalabras[$index]['palabra'] = $palabra['palabra'];
+        // Add: funcionalidad mensajes
+        $arrayPalabras[$index]['mensaje'] = $palabra['frase'];
         $index ++;
     }
     $cantidad_palabras = count($arrayPalabras);
@@ -86,7 +91,9 @@ while ($bot = mysql_fetch_assoc($bots)) {
             $recorrido = false;
         }
     
-        $query_tw_palabra = $arrayPalabras[$palabra_indice];
+        $query_tw_palabra = $arrayPalabras[$palabra_indice]['palabra'];
+        // Add: funcionalidad mensajes
+        $mensaje_palabra = $arrayPalabras[$palabra_indice]['mensaje'];
         
         $pagina = 1;
         $seguir = true;
@@ -139,7 +146,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                         $usuarios['location'] = "";
                                     }
 
-                                    $query_insert = "INSERT INTO tweets (bot_id, tw_usuario_id, estado, tw_tweet_id, tw_location, tw_text, tw_created_at, tw_usuario, created_at, updated_at, palabra, ciudad) VALUES ('" . $bot['id'] . "', '" . $usuarios['from_user_id'] . "', '0', '" . $usuarios['id'] . "', '" . $usuarios['location'] . "', '" . $usuarios['text'] . "', '" . $usuarios['created_at'] . "', '" . $usuarios['from_user'] . "', '" .  date("Y-m-d H:i:s") . "', '" . date("Y-m-d H:i:s") . "', '". $query_tw_palabra ."', '". $arrayCiudades[$ciudad_indice]['nombre'] ."');";
+                                    $query_insert = "INSERT INTO tweets (bot_id, tw_usuario_id, estado, tw_tweet_id, tw_location, tw_text, tw_created_at, tw_usuario, created_at, updated_at, palabra, ciudad, mensaje_enviado) VALUES ('" . $bot['id'] . "', '" . $usuarios['from_user_id'] . "', '0', '" . $usuarios['id'] . "', '" . $usuarios['location'] . "', '" . $usuarios['text'] . "', '" . $usuarios['created_at'] . "', '" . $usuarios['from_user'] . "', '" .  date("Y-m-d H:i:s") . "', '" . date("Y-m-d H:i:s") . "', '". $query_tw_palabra ."', '". $arrayCiudades[$ciudad_indice]['nombre'] ."', 0);";
                                     if ($ambiente != 0) {
                                         $log .= "--------------------\nQuery Insert: " . $query_insert . "\n";
                                     }
@@ -155,6 +162,14 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                         if ($seguido != 1) {
                                             
                                             $siguiendo = $twitter->friendshipsExists($bot['tw_cuenta'], $usuarios['from_user']);
+
+                                            // Add: funcionalidad mensajes
+                                            if ($mensaje_palabra != "") {
+                                                $twitter->statusesUpdate('@' . $usuarios['from_user'] . ' ' . $mensaje_palabra);
+                                            } elseif ($mensaje_bot != "") {
+                                                $twitter->statusesUpdate('@' . $usuarios['from_user'] . ' ' . $mensaje_bot);
+                                            }
+
                                             if ($siguiendo != 1) {
                                                 $twitter->friendshipsCreate($usuarios['from_user_id']);
                                                 mysql_query("UPDATE tweets SET estado = 1 WHERE id = $id");
@@ -266,7 +281,7 @@ while ($bot = mysql_fetch_assoc($bots)) {
 if ($ambiente != 0) {
     if ($log != '') {
         $log .= "-----------------------------------------------\n";
-        $log .= "\n\nEncontrados:\n" . print_r($encontrados, true);
+        //$log .= "\n\nEncontrados:\n" . print_r($encontrados, true);
 
         $log .= "\n\nFin del proceso: ";
         $log .= date("D, d/m/Y, H:i:s")."\n";
