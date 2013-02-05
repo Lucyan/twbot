@@ -8,10 +8,10 @@
             <% user = User.find(session[:login]); %>
             <% if user.perfil == 1 %>
               <li><%= link_to "Administrar Usuario",    usuarios_path %></li>
+              <li><%= link_to "Ciudades",    ciudades_path %></li>
             <% end %>
             <li><%= link_to "Listado Bots",    root_path %></li>
             <li><%= link_to "Agregar Bot",    bot_nuevo_path %></li>
-            <li><%= link_to "Ciudades",    ciudades_path %></li>            
           <% end %>
         </ul>
       </nav>

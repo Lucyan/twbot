@@ -1,16 +1,16 @@
-<% provide(:title, 'Nuevo Usuario') %>
+<% provide(:title, 'Editar Usuario') %>
 <div class="center hero-unit">
   	<h1>Nuevo Usuario</h1>
   	<% if flash[:error] %>
       	<div class="mensajes_error">
       		<p><%= flash[:error] %><p>
-      			<% if @user.errors.any? %>
+      			<% if @usuario.errors.any? %>
 					  <div id="error_explanation">
 						    <div class="alert alert-error">
-						      	The form contains <%= pluralize(@user.errors.count, "error") %>.
+						      	The form contains <%= pluralize(@usuario.errors.count, "error") %>.
 						    </div>
 						    <ul>
-							    <% @user.errors.full_messages.each do |msg| %>
+							    <% @usuario.errors.full_messages.each do |msg| %>
 							      	<li>* <%= msg %></li>
 							    <% end %>
 						    </ul>
@@ -19,14 +19,14 @@
       	</div>
     <% end %>
   	<div class="form_puntos origen">
-		<%= form_for @user, :url => registro_path do |form| %>
-			<% if @user.errors.any? %>
+		<%= form_for @usuario, :url => usuarios_editar_path(@usuario) do |form| %>
+			<% if @usuario.errors.any? %>
 				<div id="error_explanation">
 				<div class="alert alert-error">
-					The form contains <%= pluralize(@user.errors.count, "error") %>.
+					The form contains <%= pluralize(@usuario.errors.count, "error") %>.
 				</div>
 				<ul>
-				<% @user.errors.full_messages.each do |msg| %>
+				<% @usuario.errors.full_messages.each do |msg| %>
 					<li>* <%= msg %></li>
 				<% end %>
 				</ul>
@@ -44,13 +44,13 @@
 				</div>
 
 				<div class="field control-group">
-					<%= form.label :password %>
-					<%= form.password_field :password %>
+					<%= form.label :cantidad_bots %>
+					<%= form.text_field :cantidad_bots %>
 				</div>
 
 				<div class="field control-group">
-					<%= form.label :password_confirmation %>
-					<%= form.password_field :password_confirmation %>
+					<%= form.label :perfil %>
+					<%= form.select(:perfil, [["Usuario", 0], ["Administrador", 1]])%>
 				</div>
 			</fieldset>
 

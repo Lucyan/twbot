@@ -1,5 +1,15 @@
 class CiudadesController < ApplicationController
+  protect_from_forgery
   before_filter :recuperar_ciudad, :only => [:editar, :actualizar, :eliminar]
+  before_filter :verifica_perfil
+
+  #Verficia perfil de usuario
+  def verifica_perfil
+    user = User.find(session[:login]);
+    if user.perfil != 1
+      redirect_to(root_path)
+    end
+  end
 
   def recuperar_ciudad
     @ciudad = Ciudad.find(params[:id])

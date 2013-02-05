@@ -40,7 +40,10 @@
   match "/registro" => "bots#registrar", :as => '/registro', :via => :get
   match "/registro" => "bots#nuevo_usuario", :as => '/registro', :via => :post
 
-   match "/usuarios" => "users#index"
+  match "/usuarios" => "users#index"
+  match '/usuarios/eliminar/:id' => 'users#eliminar', :as => '/usuarios/eliminar'
+  match "/usuarios/:id/editar" => "users#editar", :as => '/usuarios/editar', :via => :get
+  match "/usuarios/:id/editar" => "users#guardar_editado", :as => '/usuarios/editar', :via => :put
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

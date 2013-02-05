@@ -5,14 +5,17 @@
     	<tr>
             <th>Nombre</th>
             <th>E-Mail</th>
-            <th>Cantidad Bots</th>
+            <th>Bots</th>
             <th>Perfil</th>
     	</tr>
 		<% @usuarios.each do |usuario| %>
 			<tr>
 				<td><%= usuario.name %></td>
 				<td><%= usuario.email %></td>
-				<td><%= usuario.cantidad_bots %></td>
+				<td>
+					<div>Registrados: <%= usuario.bots.count %></div>
+                    <div>Máximo: <%= usuario.cantidad_bots %></div>
+				</td>
 				<td>
 					<% if usuario.perfil == 1 %>
 						Administrador
@@ -20,6 +23,18 @@
 						Usuario
 					<% end %>
 				</td>
+				<td>
+                    <div class="btn-toolbar">
+                        <div class="btn-group">
+                            <%= link_to "<i class='icon-edit icon-white'></i>".html_safe, usuarios_editar_path(usuario), class: "btn btn-mini btn-info", title: "Editar Usuario" %>
+                            <% if usuario.id == @user.id %>
+                            	<span class="btn btn-mini btn-danger disabled" title="Eliminar Usuario"><i class='icon-trash icon-white'></i></span>
+                            <% else %>
+                            	<%= link_to "<i class='icon-trash icon-white'></i>".html_safe, usuarios_eliminar_path(usuario), class: "btn btn-mini btn-danger", title: "Eliminar Usuario", :confirm => "Seguro que quieres eliminar este usuario?" %>
+                            <% end %>
+                        </div>
+                    </div>
+                </td>
 			</tr>
 		<% end %>
 	</table>
