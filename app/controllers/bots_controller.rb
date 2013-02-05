@@ -3,7 +3,19 @@ class BotsController < ApplicationController
 
   # Recupera bot según parametro de url
   def recuperar_bot
-    @bot = Bot.find(params[:id])
+    begin
+      @bot = Bot.find(params[:id])
+
+      # Verifica si el usuario que está consultando el bot corresponde al de la sessión (solo lso admin pueden ver todo)
+      user = User.find(session[:login]);
+      if user.perfil == 0
+        if @bot.user_id != user.id
+          redirect_to(root_path, :notice => "No tienes acceso al bot solicitado")
+        end
+      end
+    rescue Exception => e
+      redirect_to(root_path, :notice => "Error: #{e}")
+    end
   end
 
   # Despliega Listado todos los Bots
@@ -12,6 +24,12 @@ class BotsController < ApplicationController
   	#@bots = Bot.all
     @user = User.find(session[:login]);
     @bots = @user.bots;
+    if params['usuario'].present?
+      if @user.perfil == 1
+        usuario = User.find(params['usuario']);
+        @bots = usuario.bots
+      end
+    end
   end
 
   # Despliega Formulario para gregar nuevo Bot
@@ -161,19 +179,29 @@ class BotsController < ApplicationController
 
   # Agregar Ciudad al Bot
   def agregar_ciudad
-    BotCiudad.create(bot_id: params[:id], ciudad_id: params[:id_ciudad])
-    redirect_to(bot_ciudades_path(params[:id]), notice: "Ciudad Agregada")
+    begin
+      ciudad = Ciudad.find(params[:id_ciudad])
+
+      BotCiudad.create(bot_id: params[:id], ciudad_id: params[:id_ciudad])
+      redirect_to(bot_ciudades_path(params[:id]), notice: "Ciudad Agregada")
+    rescue Exception => e
+      redirect_to(root_path, :notice => "Error: #{e}")
+    end
   end
 
   # Eliminar Ciudad del Bot
   def eliminar_ciudad
-    @botciudad = BotCiudad.find(params[:id_botciudad])
-    @botciudad.destroy
-    bot = Bot.find(params[:id])
-    if bot.botCiudads.length == 0
-      bot.update_attributes(estado: 0)
+    begin
+      @botciudad = BotCiudad.find(params[:id_botciudad])
+      @botciudad.destroy
+      bot = Bot.find(params[:id])
+      if bot.botCiudads.length == 0
+        bot.update_attributes(estado: 0)
+      end
+      redirect_to(bot_ciudades_path(params[:id]), notice: "Ciudad Eliminada")
+    rescue Exception => e
+      redirect_to(root_path, :notice => "Error: #{e}")
     end
-    redirect_to(bot_ciudades_path(params[:id]), notice: "Ciudad Eliminada")
   end
 
   # Mustra listado de las personas que se han seguido

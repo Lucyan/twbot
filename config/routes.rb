@@ -44,6 +44,7 @@
   match '/usuarios/eliminar/:id' => 'users#eliminar', :as => '/usuarios/eliminar'
   match "/usuarios/:id/editar" => "users#editar", :as => '/usuarios/editar', :via => :get
   match "/usuarios/:id/editar" => "users#guardar_editado", :as => '/usuarios/editar', :via => :put
+  match "/:usuario" => "bots#index", :as => '/usuarios/bots'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -45,12 +45,33 @@
 
 				<div class="field control-group">
 					<%= form.label :cantidad_bots %>
-					<%= form.text_field :cantidad_bots %>
+					<div class="input-append">
+						<%= form.text_field :cantidad_bots, {class: "span1 cantidad_bots", id: "appendedInputButtons", style: "display:none;"} %>
+						<span class="span1 uneditable-input cantidad_bots_view"><%= @usuario.cantidad_bots %></span><button class="btn resta" type="button" onclick="cambiar('resta');">-</button><button class="btn" type="button" onclick="cambiar('sumar');">+</button>
+						<script>
+							function cambiar(operacion) {
+								var valor = parseInt($(".cantidad_bots").val());
+								if (operacion == "sumar") {
+									valor = valor + 1;
+								} else {
+									valor = valor - 1;
+								}
+								$(".cantidad_bots").val(""+valor);
+								$(".cantidad_bots_view").html(valor);
+
+								if (valor == 0) {
+									$('button.resta').attr("disabled", "disabled");
+								} else {
+									$('button.resta').removeAttr("disabled");
+								}
+							}
+						</script>
+					</div>
 				</div>
 
 				<div class="field control-group">
 					<%= form.label :perfil %>
-					<%= form.select(:perfil, [["Usuario", 0], ["Administrador", 1]])%>
+					<%= form.select(:perfil, [["Usuario", 0], ["Administrador", 1]], {}, { :class => 'span2' })%>
 				</div>
 			</fieldset>
 
