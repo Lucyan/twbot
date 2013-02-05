@@ -31,5 +31,4 @@ ambiente.php
 /config/database.yml
 /twbot/config/initializers/twitter.rb
 /twbot/config/initializers/omniauth.rb
-
-# wip
+config.php
