@@ -24,6 +24,9 @@
                     <div>Seguir por Hora: <%= bot.cantidad_seguir %></div>
                     <div>Verificar Cada: <%= bot.verificar_seguido %> dias</div>
                     <div>Última Renovación: <%= bot.fecha_renovacion.strftime("%d/%m/%Y") %></div>
+                    <% if @user.perfil == 1 %>
+                        <div><%= link_to "Renovar", renovar_bot_path(bot), class: "btn btn-mini btn-success", title: "Renovar por 31 días" %></div>
+                    <% end %>
                 </td>
                 <td>
                     <div>Inicial: <%= bot.followers_count %></div>

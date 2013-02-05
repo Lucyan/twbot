@@ -1,5 +1,5 @@
 class BotsController < ApplicationController
-  before_filter :recuperar_bot, :only => [:editar, :actualizar, :bot_on, :bot_off, :palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades, :tweets, :tweet_detalle, :unfollow, :follow]
+  before_filter :recuperar_bot, :only => [:editar, :actualizar, :bot_on, :bot_off, :palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades, :tweets, :tweet_detalle, :unfollow, :follow, :renovar]
 
   # Recupera bot según parametro de url
   def recuperar_bot
@@ -257,5 +257,18 @@ class BotsController < ApplicationController
 
     mensaje = "Se sigue a " + @tweet.tw_usuario
     redirect_to(bot_tweets_path(@bot), notice: mensaje)
+  end
+
+  # renueva bots por 31 días
+  def renovar
+    # Se agrega fecha de renovación para controlar uso por fechas (1 mes)
+    fecha = Time.new
+    @bot.fecha_renovacion = fecha.strftime("%d-%m-%Y")
+
+    if @bot.save
+      redirect_to(root_path, :notice => "Bot Renovado")
+    else
+      redirect_to(root_path, :notice => "Error al intentar renovar, reintentalo")
+    end
   end
 end
