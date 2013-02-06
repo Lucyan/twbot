@@ -46,7 +46,9 @@
                                 <%= link_to "<i class='icon-stop icon-white'></i>".html_safe, bot_off_path(bot), class: "btn btn-mini btn-danger", title: "Apagar Bot", :confirm => "Seguro que quieres apagar este bot?" %>
                             <% end %>
                             <%= link_to "<i class='icon-edit icon-white'></i>".html_safe, bot_editar_path(bot), class: "btn btn-mini btn-info", title: "Editar Bot" %>
-                            <%= link_to "<i class='icon-trash icon-white'></i>".html_safe, bot_eliminar_path(bot), class: "btn btn-mini btn-danger", title: "Eliminar Bot", :confirm => "Seguro que quieres eliminar este bot?" %>
+                            <% if @user.perfil == 1 %>
+                                <%= link_to "<i class='icon-trash icon-white'></i>".html_safe, bot_eliminar_path(bot), class: "btn btn-mini btn-danger", title: "Eliminar Bot", :confirm => "Seguro que quieres eliminar este bot?" %>
+                            <% end %>
                         </div>
                     </div>
                     <div class="btn-toolbar">
