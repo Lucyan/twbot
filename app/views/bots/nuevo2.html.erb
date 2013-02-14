@@ -1,7 +1,8 @@
-<% provide(:title, 'Nuevo') %>
+<% provide(:title, 'Nuevo Bot') %>
 <div class="center hero-unit">
   	<h1>Nuevo Bot</h1>
-  	<h2>Si esta no es la cuenta que deseas utilizar, deslogeate de twitter en otra ventana y vuelve a empezar</h2>
+	<%= render "layouts/menu" %>
+  	<h2>Si esta no es la cuenta que deseas utilizar, <a href="https://twitter.com/logout" target="_blank">deslogeate</a> de twitter en otra ventana y <%=link_to "vuelve a empezar", bot_nuevo_path %></h2>
   	<div class="form_puntos origen">
 		<%= form_for @bot, :url => bot_nuevo_path do |form| %>
 			<fieldset class="fields">
@@ -17,12 +18,12 @@
 					</div>
 				</div>
 
-				<div class="field control-group">
+				<div style="display:none;" class="field control-group">
 					<%= form.label :tw_token, "Twitter Token" %>
 					<%= form.text_field :tw_token, {class: "input-xxlarge", readonly: "readonly"} %>
 				</div>
 
-				<div class="field control-group">
+				<div style="display:none;" class="field control-group">
 					<%= form.label :tw_secret, "Twitter Secret" %>
 					<%= form.text_field :tw_secret, {class: "input-xxlarge", readonly: "readonly"} %>
 				</div>

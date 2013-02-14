@@ -1,19 +1,28 @@
-<% provide(:title, 'Bot Ciudades') %>
+
+
+<% provide(:title, "Bot Ciudades") %>
 <div class="center hero-unit">
   	<h1>Ciudades asociadas al Bot <%= @bot.nombre %></h1>
-
+	<%= render "layouts/menu" %>
 	<% if flash[:notice] %>
       	<div class="notice">
       		<p><%= flash[:notice] %><p>
       	</div>
     <% end %>
 
-    <table>
+    <table class="ciudadestabla">
     	<tr>
     		<th colspan="2">Ciudades disponibles</th>
-    	</tr>
-	    <% @ciudades.each do |ciudad| %>
-	    	<tr id="ciudad-<%= ciudad.id %>">
+    	</tr>	
+		<tr id="nociudades">
+			<th colspan="2"> No hay ciudades disponibles</td>
+		</tr>
+		
+		
+		<% cuenta = @ciudades.count; %>
+	    <% @ciudades.each do |ciudad|%>
+		
+	    	<tr id="ciudad-<%= ciudad.id %>" >
 	    		<td><%= ciudad.nombre %></td>
 	    		<td>
 	    			<div class="btn-toolbar">
@@ -22,13 +31,21 @@
                         </div>
                     </div>
                 </td>
+			</tr>
+
 	    <% end %>
 	</table>
 
-	<table>
+	<table class="ciudadestabla">
     	<tr>
     		<th colspan="2">Ciudades en el Bot</th>
     	</tr>
+		<% cuenta = cuenta - @bot.botCiudads.count %>
+		<% if @bot.botCiudads.count == 0 %>
+			<tr>
+				<td colspan="2">No hay ciudades asociadas</td>
+			</tr>
+		<% else %>
 	    <% @bot.botCiudads.each do |botciudad| %>
 	    	<tr>
 	    		<td><%= botciudad.ciudad.nombre %></td>
@@ -38,10 +55,22 @@
                             <%= link_to "Quitar", bot_ciudades_del_path(@bot, botciudad.id), class: "btn" %>
                         </div>
                         <script>
-                        	$('#ciudad-<%= botciudad.ciudad.id %>').remove();
+                        	$("#ciudad-<%= botciudad.ciudad.id %>").remove();
                         </script>
                     </div>
                 </td>
 	    <% end %>
+		<% end %>
 	</table>
+	
+	<% if cuenta <= 0 %>
+		<script>
+			
+			document.getElementById("nociudades").style.display = "table-row";
+		
+		</script>
+	<% end %>
+	
+	<%= link_to "¿No encuentras la ciudad que quieres? Envíanos un correo para que la agreguemos.", "mailto:contacto@reframe.cl" %>
+	
 </div>

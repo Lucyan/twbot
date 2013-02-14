@@ -1,6 +1,7 @@
 <% provide(:title, 'Agregar Palabras') %>
 <div class="center hero-unit">
   	<h1>Nueva Palabra para <%= @bot.nombre %></h1>
+	<%= render "layouts/menu" %>
   	<% if flash[:error] %>
       	<p class="error"><%= flash[:error] %></p>
     <% end %>

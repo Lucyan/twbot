@@ -1,8 +1,15 @@
   Twbot::Application.routes.draw do
   get "users/index"
 
-  root to: 'bots#index'
+  root to: 'pages#index'
 
+  
+  match "index" => "pages#index"
+  match "pricing" => "pages#pricing"
+  match "about" => "pages#about"
+  match "tour" => "pages#tour"
+  
+  match "/bot" => "bots#index"
   match '/bot/nuevo' => 'bots#nuevo', :as => '/bot/nuevo', :via => :get
   match '/bot/nuevo' => 'bots#guardar', :as => '/bot/nuevo', :via => :post
   match '/bot/:id/editar' => 'bots#editar', :as => '/bot/editar', :via => :get
@@ -39,15 +46,20 @@
 
   match "/registro" => "bots#registrar", :as => '/registro', :via => :get
   match "/registro" => "bots#nuevo_usuario", :as => '/registro', :via => :post
-
+  
+  
   match "/usuarios" => "users#index"
+  match "/usuarios/:id/ver" => "users#ver", :as => 'usuarios/ver', :via => :get
   match '/usuarios/eliminar/:id' => 'users#eliminar', :as => '/usuarios/eliminar'
   match "/usuarios/:id/editar" => "users#editar", :as => '/usuarios/editar', :via => :get
   match "/usuarios/:id/editar" => "users#guardar_editado", :as => '/usuarios/editar', :via => :put
+  
   match "/:usuario" => "bots#index", :as => '/usuarios/bots'
+  
 
   match "/renovar/:id" => "bots#renovar", :as => '/renovar/bot'
 
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

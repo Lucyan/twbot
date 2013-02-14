@@ -1,12 +1,7 @@
-<footer class="footer">
-  <small>
-    <%= link_to NOMBRE_APP,   root_path %>
-    made for 
-    <%= link_to EMPRESA,   URL_EMPRESA, target: '_blank' %>
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to "Logout",   logout_path %></li>
-    </ul>
-  </nav>
+<footer>
+		<a id="logo" href="http://reframe.cl" target="_blank"><%= image_tag  "reframe-logo.png" %></a>
+		
+		<% if session[:login] %>
+			<%= link_to "Logout",   logout_path %>
+		<% end %>
 </footer>

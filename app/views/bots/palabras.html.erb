@@ -1,16 +1,20 @@
-<% provide(:title, 'Palabras') %>
+<% provide(:title, "Palabras") %>
 <div class="center hero-unit">
   	<h1>Palabras bot <%= @bot.nombre %></h1>
+	<%= render "layouts/menu" %>
 	<% if flash[:notice] %>
       	<p class="notice"><%= flash[:notice] %></p>
     <% end %>
     <%= link_to "Agregar Palabra", bot_agregar_palabra_path(@bot), class: "btn btn-large btn-primary" %>
-    <table>
+    <table class="palabrastabla">
     	<tr>
     		<th>Palabra</th>
             <th>Frase</th>
     		<th>Acciones</th>
     	</tr>
+		<% if @bot.palabras.count == 0 %>
+			<tr><td colspan="3"> Aún no hay ninguna palabra asociada al bot</td></tr>
+		<% else %>
     	<% @bot.palabras.each do |palabra| %>
 	    	<tr>
 	    		<td><%= palabra.palabra %></td>
@@ -23,6 +27,7 @@
                     </div>
 	    		</td>
 	    	</tr>
+		<% end %> 
 	    <% end %>
     </table>
 </div>

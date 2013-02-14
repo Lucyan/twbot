@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     if user && user.authenticate(params[:session][:password])
       session[:login] = user
       session[:last_seen] = Time.now
-      redirect_to root_path
+      redirect_to bot_path
     else
       flash.now[:error] = 'Usuario o Password Incorrectos'
       render :template => 'bots/login'
@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
     @user.perfil = 0
     if @user.valid?
       @user.save
-      redirect_to(root_path, :notice => "Usuario creado, ya puedes hacer login")
+      redirect_to(bot_path, :notice => "Usuario creado, ya puedes hacer login")
     else
       flash[:error] = "Error en los datos ingresados"
       render 'bots/registrar'

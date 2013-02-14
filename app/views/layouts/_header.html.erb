@@ -1,20 +1,78 @@
-<header class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <%= link_to NOMBRE_APP, root_path, id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
-          <% if session[:login] %>
-            <% user = User.find(session[:login]); %>
-            <% if user.perfil == 1 %>
-              <li><%= link_to "Administrar Usuario",    usuarios_path %></li>
-              <li><%= link_to "Ciudades",    ciudades_path %></li>
-            <% end %>
-            <li><%= link_to "Listado Bots",    root_path %></li>
-            <li><%= link_to "Agregar Bot",    bot_nuevo_path %></li>
-          <% end %>
-        </ul>
-      </nav>
-    </div>
-  </div>
+<script>
+	function show(){
+		myEl = document.getElementById("secondary-nav");
+		if(myEl.style.display == "none"){
+			myEl.style.display = "block"
+		}else{
+			myEl.style.display="none";
+		}
+	}
+</script>
+
+<header>
+			<div class="limited">
+			<a href="/index"> <img src="/images/logo.png" /></a>
+			
+			<% if session[:login] %>
+			<% user = User.find(session[:login]); %>
+			<a href="#"  id="toggler" class="sign-in" onclick="show()"><img src="/images/icons/user.png"/><%= user.name %></a>
+			
+			
+			
+			<% else %>
+			<a href="bot" class="sign-in" ><img src="/images/icons/enter.png"/>Sign in</a>
+			<% end %>
+			</div>
+			
+			<nav>
+			<div class="limited">
+				<% if session[:login] %>
+				<a href="#" id="toggler" onclick="show()">Account</a>
+				<% else %>
+				<a href="/bot">Login</a>
+				<% end %>
+				<a href="mailto:contacto@reframe.cl">Contact</a>
+				<a href="/about">About</a>
+				<a href="/pricing">Pricing</a>
+				<a href="/index">Home</a>
+				
+			</div>
+			</nav>
 </header>
+<% if session[:login] %>
+<nav id="secondary-nav">
+<div class="limited">
+<ul>
+	<li class="optiontitle">Mi cuenta</li>
+	<li><%= link_to "Perfil", usuarios_ver_path(user) %> </li>
+	<li><%= link_to "Logout",    logout_path %></li>
+	
+</ul>
+
+<ul>
+	<li class="optiontitle">FollowKeywords</li>
+	<li><%= link_to bot_nuevo_path do %>
+	<img src="/images/icons/crear_bots_hover.png" class="nav-icon" /> Agregar Bot
+		<% end %>
+	</li>
+	<li><%= link_to bot_path do %>
+	<img src="/images/icons/lista_bots_hover.png" class="nav-icon" /> Listado Bots
+		<% end %>
+	</li>
+	
+	
+	<% if user.perfil == 1 %>
+	<li><%= link_to ciudades_path do %>
+	<img src="/images/icons/ubicacion_bots_hover.png" class="nav-icon" /> Ciudades
+		<% end %>
+	</li>
+	<li><%= link_to usuarios_path do %>
+	<img src="/images/icons/user_bots_hover.png" class="nav-icon" /> Administrar Usuario
+		<% end %>
+	</li>
+	<% end %>
+</ul>
+<hr>
+</div>
+</nav>
+<% end %>

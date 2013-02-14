@@ -10,11 +10,11 @@ class BotsController < ApplicationController
       user = User.find(session[:login]);
       if user.perfil == 0
         if @bot.user_id != user.id
-          redirect_to(root_path, :notice => "No tienes acceso al bot solicitado")
+          redirect_to(bot_path, :notice => "No tienes acceso al bot solicitado")
         end
       end
     rescue Exception => e
-      redirect_to(root_path, :notice => "Error: #{e}")
+      redirect_to(bot_path, :notice => "Error: #{e}")
     end
   end
 
@@ -39,7 +39,7 @@ class BotsController < ApplicationController
     logger.debug "Cantidad bot :#{bots.count}"
 
     if bots.count == user.cantidad_bots
-      redirect_to(root_path, :notice => "No puedes agregar mas bots, tu cuenta esta limitada a #{bots.count} bots.")
+      redirect_to(bot_path, :notice => "No puedes agregar mas bots, tu cuenta esta limitada a #{bots.count} bots.")
     end
   end
 
@@ -65,7 +65,7 @@ class BotsController < ApplicationController
 
   	if @bot.valid?
   		@bot.save
-  		redirect_to(root_path, :notice => "Bot creado OK")
+  		redirect_to(bot_path, :notice => "Bot creado OK")
   	else
   		flash[:error] = "Los datos del BOT no son validos, intenta nuevamente"
 		  render 'nuevo2'
@@ -81,7 +81,7 @@ class BotsController < ApplicationController
         existe = Bot.find(:first, :conditions => {tw_cuenta: auth['info']['nickname']})
         logger.debug "The object is #{existe}"
         if existe
-          flash[:error] = "ERROR, la cuenta que estas tratando de utilizar ya esta registrada en nuestros sistemas, recuerda que no puedes diplicar cuentas, si estas seguro que deseas utilizar esta cuenta, contactate con los administradores"
+          flash[:error] = "ERROR: la cuenta que estas tratando de utilizar ya esta registrada en nuestros sistemas, recuerda que no puedes duplicar cuentas. Si estas seguro que deseas utilizar esta cuenta, contactate con los administradores"
           render 'nuevo'
         else
           @bot = Bot.new(nombre: auth['info']['name'], tw_cuenta: auth['info']['nickname'], tw_token: auth['credentials']['token'], tw_secret: auth['credentials']['secret'], estado: 0)
@@ -110,7 +110,7 @@ class BotsController < ApplicationController
     @bot.botCiudads.destroy_all
     @bot.tweets.destroy_all
     @bot.destroy
-    redirect_to(root_path, :notice => "Bot Eliminado")
+    redirect_to(bot_path, :notice => "Bot Eliminado")
   end
 
   # Formulario Editar
@@ -120,7 +120,7 @@ class BotsController < ApplicationController
   # Formulario Editar
   def actualizar
     if @bot.update_attributes(params[:bot])
-      redirect_to(root_path, :notice => "Bot Actualizado")
+      redirect_to(bot_path, :notice => "Bot Actualizado")
     else
       render 'editar'
     end
@@ -130,14 +130,14 @@ class BotsController < ApplicationController
   def bot_on
     @bot.estado = 1
     @bot.save
-    redirect_to(root_path, :notice => "Bot Encendido")
+    redirect_to(bot_path, :notice => "Bot Encendido")
   end
 
   # Apagar bot
   def bot_off
     @bot.estado = 0
     @bot.save
-    redirect_to(root_path, :notice => "Bot Apagado")
+    redirect_to(bot_path, :notice => "Bot Apagado")
   end
 
   # Despliega listado de Palabras de un Bot
@@ -185,7 +185,7 @@ class BotsController < ApplicationController
       BotCiudad.create(bot_id: params[:id], ciudad_id: params[:id_ciudad])
       redirect_to(bot_ciudades_path(params[:id]), notice: "Ciudad Agregada")
     rescue Exception => e
-      redirect_to(root_path, :notice => "Error: #{e}")
+      redirect_to(bot_path, :notice => "Error: #{e}")
     end
   end
 
@@ -200,7 +200,7 @@ class BotsController < ApplicationController
       end
       redirect_to(bot_ciudades_path(params[:id]), notice: "Ciudad Eliminada")
     rescue Exception => e
-      redirect_to(root_path, :notice => "Error: #{e}")
+      redirect_to(bot_path, :notice => "Error: #{e}")
     end
   end
 
@@ -266,9 +266,9 @@ class BotsController < ApplicationController
     @bot.fecha_renovacion = fecha.strftime("%d-%m-%Y")
 
     if @bot.save
-      redirect_to(root_path, :notice => "Bot Renovado")
+      redirect_to(bot_path, :notice => "Bot Renovado")
     else
-      redirect_to(root_path, :notice => "Error al intentar renovar, reintentalo")
+      redirect_to(bot_path, :notice => "Error al intentar renovar, reintentalo")
     end
   end
 end

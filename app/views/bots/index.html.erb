@@ -1,8 +1,14 @@
+
+
 <div class="center hero-unit">
-  	<h1>Bots en el Sistema</h1>
+  	<h1>FollowKeyWords en el Sistema</h1>
+	<%= render "layouts/menu" %>
 	<% if flash[:notice] %>
       	<p class="notice"><%= flash[:notice] %></p>
     <% end %>
+	<%if @bots.count <= 0 %>
+	<p>No tienes ningún bot FollowKeyWord. <%= link_to "Haz click aquí para agregar uno.", bot_nuevo_path %> </p>
+	<%else %>
     <table>
     	<tr>
             <th>Nombre</th>
@@ -46,7 +52,7 @@
                                 <%= link_to "<i class='icon-stop icon-white'></i>".html_safe, bot_off_path(bot), class: "btn btn-mini btn-danger", title: "Apagar Bot", :confirm => "Seguro que quieres apagar este bot?" %>
                             <% end %>
                             <%= link_to "<i class='icon-edit icon-white'></i>".html_safe, bot_editar_path(bot), class: "btn btn-mini btn-info", title: "Editar Bot" %>
-                            <% if @user.perfil == 1 %>
+							<% if @user.perfil == 1 %>
                                 <%= link_to "<i class='icon-trash icon-white'></i>".html_safe, bot_eliminar_path(bot), class: "btn btn-mini btn-danger", title: "Eliminar Bot", :confirm => "Seguro que quieres eliminar este bot?" %>
                             <% end %>
                         </div>
@@ -61,5 +67,6 @@
                 </td>
 	    	</tr>
 	    <% end %>
+		<% end %>
     </table>
 </div>

@@ -1,0 +1,18 @@
+<header >
+  
+	  <a href="index.html"> 	<%= image_tag "logo.png" %></a>
+										
+      <nav>
+	  <% if session[:login] %>
+			<% user = User.find(session[:login]); %>
+			<%= link_to "Agregar Bot",    bot_nuevo_path %>
+			<%= link_to "Listado Bots",     bot_path %>
+			<% if user.perfil == 1 %>
+				<%= link_to "Ciudades",    ciudades_path %>
+				<%= link_to "Administrar Usuario",    usuarios_path %>
+			<% end %>
+		<% end %>
+      </nav>
+    
+  
+</header>

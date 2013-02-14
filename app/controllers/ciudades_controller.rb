@@ -7,7 +7,7 @@ class CiudadesController < ApplicationController
   def verifica_perfil
     user = User.find(session[:login]);
     if user.perfil != 1
-      redirect_to(root_path)
+      redirect_to(bot_path)
     end
   end
 

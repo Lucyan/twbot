@@ -1,6 +1,7 @@
 <% provide(:title, 'Editar') %>
 <div class="center hero-unit">
   	<h1>Editar Bot</h1>
+	<%= render "layouts/menu" %>
   	<h2>Cuenta vinculada: <%= link_to "@"+@bot.tw_cuenta, "http://twitter.com/"+@bot.tw_cuenta %></h2>
   	<div class="form_puntos origen">
 		<%= form_for @bot, :url => bot_editar_path(@bot) do |form| %>

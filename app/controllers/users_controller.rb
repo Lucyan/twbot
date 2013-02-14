@@ -4,10 +4,23 @@ class UsersController < ApplicationController
 
   # Verficia perfil de usuario
   def verifica_perfil
-    @user = User.find(session[:login]);
-    if @user.perfil != 1
-      redirect_to(root_path)
-    end
+    @user = User.find(session[:login])
+	
+	begin
+	@auth_user = User.find(params[:id])
+	if @user.perfil != 1
+		if action_name != 'ver'
+			redirect_to(bot_path)
+		else	if @auth_user != @user
+			redirect_to(bot_path)	
+			end	
+		end		
+	end
+	rescue
+		if @user.perfil != 1
+			redirect_to(bot_path)
+		end
+	end
   end
 
   # Listado de Usuarios
@@ -32,6 +45,11 @@ class UsersController < ApplicationController
   def editar
     @usuario = User.find(params[:id])
   end
+  
+  #Ver Usuario
+  def ver
+	@usuario = User.find(params[:id])
+  end
 
   # Guardar Usuario editado
   def guardar_editado
@@ -42,4 +60,7 @@ class UsersController < ApplicationController
       render 'editar'
     end
   end
+  
+  
+  
 end

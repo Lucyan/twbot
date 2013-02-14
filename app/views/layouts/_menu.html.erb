@@ -1,0 +1,18 @@
+<%= link_to "Volver al menu principal", bot_path, {:class => "backlink" ,:title=>"Listado de Bots"} %>
+<br/>
+<% if session[:login] %>
+<div id="action-menu">
+	
+	<%= link_to "", bot_nuevo_path, {:class => "crearbots", :title=> "Crear Bots" }  %>
+	<%= link_to "", bot_path, {:class => "listabots", :title=> "Listado de Bots" }  %>
+	
+	<% user = User.find(session[:login]); %>
+	<% if user.perfil == 1 %>
+	
+		<%= link_to "", ciudades_path, {:class => "ciudades" , :title=> "Ciudades"}  %>
+		<%= link_to "", usuarios_path, {:class => "usuarios" , :title=> "Usuarios"}  %>
+
+	<% end %>
+	
+</div>
+<%end %>

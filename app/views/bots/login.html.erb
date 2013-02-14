@@ -7,6 +7,11 @@
       		<p><%= flash[:error] %><p>
       	</div>
     <% end %>
+	<% if flash[:notice] %>
+      	<div class="mensajes_error">
+      		<p><%= flash[:notice] %><p>
+      	</div>
+    <% end %>
   	<p>Bienvenido al sistema</p>
 
   	<%= form_for(:session, url: bot_login_path) do |f| %>
