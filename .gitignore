@@ -33,3 +33,4 @@ ambiente.php
 /twbot/config/initializers/omniauth.rb
 config.php
 Gemfile*
+/bot/config.php
