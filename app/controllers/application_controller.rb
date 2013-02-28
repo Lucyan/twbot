@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
-  # Registro
+  # Formulario de Registro
   def registrar
     if session[:login]
       redirect_to root_path
@@ -43,6 +43,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Guarda Nuevo Usuario
   def nuevo_usuario
     @user = User.new(params[:user])
     @user.cantidad_bots = 1

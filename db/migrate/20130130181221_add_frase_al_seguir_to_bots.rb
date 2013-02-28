@@ -1,5 +1,5 @@
 class AddFraseAlSeguirToBots < ActiveRecord::Migration
   def change
-    add_column :bots, :frase_al_seguir, :string
+    add_column :bots, :frase_al_seguir, :string, :default => ''
   end
 end

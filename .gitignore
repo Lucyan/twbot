@@ -32,3 +32,4 @@ ambiente.php
 /twbot/config/initializers/twitter.rb
 /twbot/config/initializers/omniauth.rb
 config.php
+Gemfile*

@@ -36,6 +36,9 @@ while ($bot = mysql_fetch_assoc($bots)) {
         // Add: funcionalidad mensajes
         $mensaje_bot = $bot['frase_al_seguir'];
 
+        // Add: Versión Plus
+        $plus = $bot['plus'];
+
         $palabras = mysql_query("SELECT * FROM palabras WHERE bot_id = '{$bot['id']}';");
 
         $arrayPalabras = array();
@@ -170,11 +173,15 @@ while ($bot = mysql_fetch_assoc($bots)) {
                                                 
                                                 $siguiendo = $twitter->friendshipsExists($bot['tw_cuenta'], $usuarios['from_user']);
 
-                                                // Add: funcionalidad mensajes
-                                                if ($mensaje_palabra != "") {
-                                                    $twitter->statusesUpdate('@' . $usuarios['from_user'] . ' ' . $mensaje_palabra);
-                                                } elseif ($mensaje_bot != "") {
-                                                    $twitter->statusesUpdate('@' . $usuarios['from_user'] . ' ' . $mensaje_bot);
+                                                // Add: Versión Plus
+
+                                                if ($plus == true) {
+                                                     // Add: funcionalidad mensajes
+                                                    if ($mensaje_palabra != "") {
+                                                        $twitter->statusesUpdate('@' . $usuarios['from_user'] . ' ' . $mensaje_palabra);
+                                                    } elseif ($mensaje_bot != "") {
+                                                        $twitter->statusesUpdate('@' . $usuarios['from_user'] . ' ' . $mensaje_bot);
+                                                    }
                                                 }
 
                                                 if ($siguiendo != 1) {

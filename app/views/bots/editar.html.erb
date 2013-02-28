@@ -25,19 +25,21 @@
 					</div>
 				</div>
 
-				<div class="field control-group">
-					<%= form.label :frase_al_seguir, "Frase de respuesta cuando el Bot sigue a una persona" %>
-					<div class="input-prepend">
-						<%= form.text_field :frase_al_seguir %>
+				<% if (@bot.plus == true) %>
+					<div class="field control-group">
+						<%= form.label :frase_al_seguir, "Frase de respuesta cuando el Bot sigue a una persona" %>
+						<div class="input-prepend">
+							<%= form.text_field :frase_al_seguir %>
+						</div>
 					</div>
-				</div>
 
-				<div class="field control-group">
-					<%= form.label :frase_cuando_siguen, "Frase de respuesta cuando una persona sigue al Bot" %>
-					<div class="input-prepend">
-						<%= form.text_field :frase_cuando_siguen %>
+					<div class="field control-group">
+						<%= form.label :frase_cuando_siguen, "Frase de respuesta cuando una persona sigue al Bot" %>
+						<div class="input-prepend">
+							<%= form.text_field :frase_cuando_siguen %>
+						</div>
 					</div>
-				</div>
+				<% end %>
 
 				<div class="field control-group">
 					Última Renovación

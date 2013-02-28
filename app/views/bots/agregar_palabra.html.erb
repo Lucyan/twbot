@@ -12,11 +12,12 @@
 					<%= form.label :palabra %>
 					<%= form.text_field :palabra %> 
 				</div>
-
-				<div class="field control-group numero">
-					<%= form.label :frase %>
-					<%= form.text_field :frase %> 
-				</div>
+				<% if (@bot.plus == true) %>
+					<div class="field control-group numero">
+						<%= form.label :frase %>
+						<%= form.text_field :frase %> 
+					</div>
+				<% end %>
 			</fieldset>
 
 			<fieldset class="actions">

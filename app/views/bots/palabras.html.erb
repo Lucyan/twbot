@@ -9,7 +9,9 @@
     <table class="palabrastabla">
     	<tr>
     		<th>Palabra</th>
-            <th>Frase</th>
+            <% if (@bot.plus == true) %>
+                <th>Frase</th>
+            <% end %>
     		<th>Acciones</th>
     	</tr>
 		<% if @bot.palabras.count == 0 %>
@@ -18,7 +20,9 @@
     	<% @bot.palabras.each do |palabra| %>
 	    	<tr>
 	    		<td><%= palabra.palabra %></td>
-                <td><%= palabra.frase %></td>
+                <% if (@bot.plus == true) %>
+                    <td><%= palabra.frase %></td>
+                <% end %>
 	    		<td>
 	    			<div class="btn-toolbar">
                         <div class="btn-group">

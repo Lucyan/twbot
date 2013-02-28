@@ -1,5 +1,5 @@
 class BotsController < ApplicationController
-  before_filter :recuperar_bot, :only => [:editar, :actualizar, :bot_on, :bot_off, :palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades, :tweets, :tweet_detalle, :unfollow, :follow, :renovar]
+  before_filter :recuperar_bot, :only => [:editar, :actualizar, :bot_on, :bot_off, :palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades, :tweets, :tweet_detalle, :unfollow, :follow, :renovar, :plus]
 
   # Recupera bot según parametro de url
   def recuperar_bot
@@ -266,9 +266,30 @@ class BotsController < ApplicationController
     @bot.fecha_renovacion = fecha.strftime("%d-%m-%Y")
 
     if @bot.save
-      redirect_to(bot_path, :notice => "Bot Renovado")
+      redirect_to(:back, :notice => "Bot Renovado")
     else
-      redirect_to(bot_path, :notice => "Error al intentar renovar, reintentalo")
+      redirect_to(:back, :notice => "Error al intentar renovar, reintentalo")
+    end
+  end
+
+  # Activa o desactiva Plus en bot
+  def plus
+    logger.debug "Bot antes: #{@bot.plus}"
+
+    if @bot.plus == false
+      @bot.plus = true
+      mensaje = "Plus Activado"
+    else
+      @bot.plus = false
+      mensaje = "Plus Desactivado"
+    end
+
+    logger.debug "Bot despues: #{@bot.plus}"
+
+    if @bot.save
+      redirect_to(:back, :notice => mensaje)
+    else
+      redirect_to(:back, :notice => "Error al intentar Activar/Desactivar Plus, intentalo nuevamente")
     end
   end
 end

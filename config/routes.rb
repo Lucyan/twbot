@@ -58,6 +58,7 @@
   
 
   match "/renovar/:id" => "bots#renovar", :as => '/renovar/bot'
+  match "/plus/:id" => "bots#plus", :as => '/plus/bot'
 
   
   # The priority is based upon order of creation:

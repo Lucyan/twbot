@@ -24,6 +24,9 @@ while ($bot = mysql_fetch_assoc($bots)) {
     // Add: funcionalidad mensajes
     $mensaje_bot = $bot['frase_cuando_siguen'];
 
+    // Add: Versión Plus
+    $plus = $bot['plus'];
+
     $query = "SELECT * FROM tweets WHERE created_at <  '" . date('Y-m-d', strtotime('-'.$bot['verificar_seguido'].' days')) . " 00:00:00' AND bot_id = '" . $bot['id'] . "' AND estado <> 2 AND estado <> 3;";
     if ($ambiente != 0) {
         $log .= "----------------------------\n";
@@ -52,8 +55,10 @@ while ($bot = mysql_fetch_assoc($bots)) {
 
                 // Add: funcionalidad mensajes
                 if ($row['mensaje_enviado'] == 0) {
-                    if ($mensaje_bot != '') {
-                        $twitter->statusesUpdate('@' . $row['tw_usuario'] . ' ' . $mensaje_bot);
+                    if ($plus == true) {
+                        if ($mensaje_bot != '') {
+                            $twitter->statusesUpdate('@' . $row['tw_usuario'] . ' ' . $mensaje_bot);
+                        }
                     }
                     
                     mysql_query("UPDATE tweets SET mensaje_enviado = 1 WHERE id = '{$row['id']}'");

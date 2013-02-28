@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131213813) do
+ActiveRecord::Schema.define(:version => 20130228031247) do
 
   create_table "bot_ciudades", :force => true do |t|
     t.integer  "bot_id"
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(:version => 20130131213813) do
     t.string   "tw_token"
     t.string   "tw_secret"
     t.integer  "estado"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.integer  "siguiendo"
     t.integer  "seguidores"
     t.integer  "palabra_indice"
@@ -45,8 +45,9 @@ ActiveRecord::Schema.define(:version => 20130131213813) do
     t.integer  "followers_count"
     t.integer  "user_id"
     t.date     "fecha_renovacion"
-    t.string   "frase_al_seguir"
-    t.string   "frase_cuando_siguen"
+    t.string   "frase_al_seguir",     :default => ""
+    t.string   "frase_cuando_siguen", :default => ""
+    t.boolean  "plus",                :default => false
   end
 
   create_table "ciudads", :force => true do |t|
@@ -61,9 +62,9 @@ ActiveRecord::Schema.define(:version => 20130131213813) do
   create_table "palabras", :force => true do |t|
     t.integer  "bot_id"
     t.string   "palabra"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "frase"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.string   "frase",      :default => ""
   end
 
   create_table "tweets", :force => true do |t|
@@ -75,21 +76,21 @@ ActiveRecord::Schema.define(:version => 20130131213813) do
     t.string   "tw_text"
     t.string   "tw_created_at"
     t.integer  "estado"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "palabra"
     t.string   "ciudad"
-    t.integer  "mensaje_enviado"
+    t.integer  "mensaje_enviado", :default => 0
   end
 
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "password_digest"
-    t.integer  "cantidad_bots"
-    t.integer  "perfil"
+    t.integer  "cantidad_bots",   :default => 1
+    t.integer  "perfil",          :default => 0
   end
 
 end

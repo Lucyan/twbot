@@ -29,10 +29,22 @@
                 <td>
                     <div>Seguir por Hora: <%= bot.cantidad_seguir %></div>
                     <div>Verificar Cada: <%= bot.verificar_seguido %> dias</div>
-                    <div>Última Renovación: <%= bot.fecha_renovacion.strftime("%d/%m/%Y") %></div>
-                    <% if @user.perfil == 1 %>
-                        <div><%= link_to "Renovar", renovar_bot_path(bot), class: "btn btn-mini btn-success", title: "Renovar por 31 días" %></div>
-                    <% end %>
+                    <div>
+                        Última Renovación: <%= bot.fecha_renovacion.strftime("%d/%m/%Y") %>
+                        <% if @user.perfil == 1 %>
+                            <%= link_to "Renovar", renovar_bot_path(bot), class: "btn btn-mini btn-success", title: "Renovar por 31 días" %>
+                        <% end %>
+                    </div>
+                    <div>
+                        Plus: <%= (bot.plus == true) ? 'Si'  : 'No'; %>
+                        <% if @user.perfil == 1 %>
+                            <% if (bot.plus == true) %>
+                                <%= link_to "Desactivar", plus_bot_path(bot), class: "btn btn-mini btn-danger", title: "Desactivar Plus" %>
+                            <% else %>
+                                <%= link_to "Activar", plus_bot_path(bot), class: "btn btn-mini btn-success", title: "Activar Plus" %>
+                            <% end %>
+                        <% end %>
+                    </div>
                 </td>
                 <td>
                     <div>Inicial: <%= bot.followers_count %></div>
