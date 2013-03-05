@@ -1,6 +1,6 @@
 <% provide(:title, "Palabras") %>
 <div class="center hero-unit">
-  	<h1>Palabras bot <%= @bot.nombre %></h1>
+  	<h1>Palabras Followkeyword <%= @bot.nombre %></h1>
 	<%= render "layouts/menu" %>
 	<% if flash[:notice] %>
       	<p class="notice"><%= flash[:notice] %></p>
@@ -15,7 +15,7 @@
     		<th>Acciones</th>
     	</tr>
 		<% if @bot.palabras.count == 0 %>
-			<tr><td colspan="3"> Aún no hay ninguna palabra asociada al bot</td></tr>
+			<tr><td colspan="3"> Aún no hay ninguna palabra asociada al Followkeyword</td></tr>
 		<% else %>
     	<% @bot.palabras.each do |palabra| %>
 	    	<tr>

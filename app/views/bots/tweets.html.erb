@@ -1,6 +1,6 @@
-<% provide(:title, 'Bot Tweets') %>
+<% provide(:title, 'Followkeyword Tweets') %>
 <div class="center hero-unit">
-  	<h1>Personas seguidas por el Bot <%= @bot.nombre %></h1>
+  	<h1>Personas seguidas por el Followkeyword <%= @bot.nombre %></h1>
 	<%= render "layouts/menu" %>
 	<% if flash[:notice] %>
       	<div class="notice">
@@ -36,7 +36,7 @@
             <th>Acciones</th>
     	</tr>
 	    <% if @tweets.count == 0 %>
-			<tr><td colspan="6">El bot no esta siguiendo a ninguna persona</td></tr>
+			<tr><td colspan="6">El Followkeyword no esta siguiendo a ninguna persona</td></tr>
 		<% end %>
 
 		<% @tweets.each do |tweet| %>

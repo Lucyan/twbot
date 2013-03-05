@@ -3,9 +3,10 @@
   	<h1>Perfil de Usuario</h1>
 	<%= render "layouts/menu" %>
   	
-	<p><b>Nombre:</b><%=@usuario.name%></p>
-	<p><b>E-mail:</b><%=@usuario.email%></p>
-	<p><b>Cantidad de Bots:</b> <%=@usuario.bots.count%> de <%=@usuario.cantidad_bots %>
-		
+	<div class="perfil">
+		<p><b>Nombre: </b><%=@usuario.name%></p>
+		<p><b>E-mail: </b><%=@usuario.email%></p>
+		<p><b>Cantidad de FollowKeywords: </b> <%=@usuario.bots.count%> de <%=@usuario.cantidad_bots %>
+	</div>
 	</div>
 </div>

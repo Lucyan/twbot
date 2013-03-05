@@ -1,6 +1,6 @@
 <% provide(:title, 'Nuevo Bot') %>
 <div class="center hero-unit">
-  	<h1>Nuevo Bot</h1>
+  	<h1>Nuevo Followkeyword</h1>
 	<%= render "layouts/menu" %>
 
 	<% if flash[:error] %>
@@ -8,6 +8,6 @@
       		<p><%= flash[:error] %><p>
       	</div>
     <% end %>
-  	<p>Debes autorizar al bot de twitter con la cuenta que deseas ganar mas seguidores para poder continuar</p>
+  	<p>Debes autorizar al Followkeyword con la cuenta que deseas ganar mas seguidores para poder continuar</p>
   	<%= link_to "Autorizar Twitter", "/auth/twitter", class: "btn btn-large btn-primary" %>
 </div>

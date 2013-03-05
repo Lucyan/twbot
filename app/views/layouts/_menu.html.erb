@@ -3,8 +3,8 @@
 <% if session[:login] %>
 <div id="action-menu">
 	
-	<%= link_to "", bot_nuevo_path, {:class => "crearbots", :title=> "Crear Bots" }  %>
-	<%= link_to "", bot_path, {:class => "listabots", :title=> "Listado de Bots" }  %>
+	<%= link_to "", bot_nuevo_path, {:class => "crearbots", :title=> "Crear FollowKeywords" }  %>
+	<%= link_to "", bot_path, {:class => "listabots", :title=> "Listado de FollowKeywords" }  %>
 	
 	<% user = User.find(session[:login]); %>
 	<% if user.perfil == 1 %>

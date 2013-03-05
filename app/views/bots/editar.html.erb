@@ -1,6 +1,6 @@
 <% provide(:title, 'Editar') %>
 <div class="center hero-unit">
-  	<h1>Editar Bot</h1>
+  	<h1>Editar Followkeyword</h1>
 	<%= render "layouts/menu" %>
   	<h2>Cuenta vinculada: <%= link_to "@"+@bot.tw_cuenta, "http://twitter.com/"+@bot.tw_cuenta %></h2>
   	<div class="form_puntos origen">
@@ -27,14 +27,14 @@
 
 				<% if (@bot.plus == true) %>
 					<div class="field control-group">
-						<%= form.label :frase_al_seguir, "Frase de respuesta cuando el Bot sigue a una persona" %>
+						<%= form.label :frase_al_seguir, "Frase de respuesta cuando el Followkeyword sigue a una persona" %>
 						<div class="input-prepend">
 							<%= form.text_field :frase_al_seguir %>
 						</div>
 					</div>
 
 					<div class="field control-group">
-						<%= form.label :frase_cuando_siguen, "Frase de respuesta cuando una persona sigue al Bot" %>
+						<%= form.label :frase_cuando_siguen, "Frase de respuesta cuando una persona sigue al Followkeyword" %>
 						<div class="input-prepend">
 							<%= form.text_field :frase_cuando_siguen %>
 						</div>
