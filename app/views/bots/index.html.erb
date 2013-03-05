@@ -48,7 +48,7 @@
                 </td>
                 <td>
                     <div>Inicial: <%= bot.followers_count %></div>
-                    <div>Seguidos x Bot: <%= bot.siguiendo %></div>
+                    <div>Seguidos x FK: <%= bot.siguiendo %></div>
                     <div>Han Seguido: <%= bot.seguidores %></div>
                 </td>
 	    		<td>
@@ -56,16 +56,16 @@
                         <div class="btn-group">
                             <% if bot.estado == 0 %>
                                 <% if bot.palabras.length > 0 && bot.botCiudads.length > 0 %>
-                                    <%= link_to "<i class='icon-play icon-white'></i>".html_safe, bot_on_path(bot), class: "btn btn-mini btn-success", title: "Encender Bot", :confirm => "Seguro que quieres encender este Followkeyword?" %>
+                                    <%= link_to "<i class='icon-play icon-white'></i>".html_safe, bot_on_path(bot), class: "btn btn-mini btn-success", title: "Encender FK", :confirm => "Seguro que quieres encender este Followkeyword?" %>
                                 <% else %>
-                                    <span class="btn btn-mini btn-success disabled" title="Agrega al menos una palabra y una ciudad al Bot"><i class='icon-play icon-white'></i></span>
+                                    <span class="btn btn-mini btn-success disabled" title="Agrega al menos una palabra y una ciudad al FK"><i class='icon-play icon-white'></i></span>
                                 <% end %>
                             <% else %>
-                                <%= link_to "<i class='icon-stop icon-white'></i>".html_safe, bot_off_path(bot), class: "btn btn-mini btn-danger", title: "Apagar Bot", :confirm => "Seguro que quieres apagar este Followkeyword?" %>
+                                <%= link_to "<i class='icon-stop icon-white'></i>".html_safe, bot_off_path(bot), class: "btn btn-mini btn-danger", title: "Apagar FK", :confirm => "Seguro que quieres apagar este Followkeyword?" %>
                             <% end %>
-                            <%= link_to "<i class='icon-edit icon-white'></i>".html_safe, bot_editar_path(bot), class: "btn btn-mini btn-info", title: "Editar Bot" %>
+                            <%= link_to "<i class='icon-edit icon-white'></i>".html_safe, bot_editar_path(bot), class: "btn btn-mini btn-info", title: "Editar FK" %>
 							<% if @user.perfil == 1 %>
-                                <%= link_to "<i class='icon-trash icon-white'></i>".html_safe, bot_eliminar_path(bot), class: "btn btn-mini btn-danger", title: "Eliminar Bot", :confirm => "Seguro que quieres eliminar este Followkeyword?" %>
+                                <%= link_to "<i class='icon-trash icon-white'></i>".html_safe, bot_eliminar_path(bot), class: "btn btn-mini btn-danger", title: "Eliminar FK", :confirm => "Seguro que quieres eliminar este Followkeyword?" %>
                             <% end %>
                         </div>
                     </div>

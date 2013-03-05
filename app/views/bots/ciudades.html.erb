@@ -1,8 +1,8 @@
 
 
-<% provide(:title, "Bot Ciudades") %>
+<% provide(:title, "FollowKeyword Ciudades") %>
 <div class="center hero-unit">
-  	<h1>Ciudades asociadas al Bot <%= @bot.nombre %></h1>
+  	<h1>Ciudades asociadas al FollowKeyword <%= @bot.nombre %></h1>
 	<%= render "layouts/menu" %>
 	<% if flash[:notice] %>
       	<div class="notice">
@@ -38,7 +38,7 @@
 
 	<table class="ciudadestabla">
     	<tr>
-    		<th colspan="2">Ciudades en el Bot</th>
+    		<th colspan="2">Ciudades en el FollowKeyword</th>
     	</tr>
 		<% cuenta = cuenta - @bot.botCiudads.count %>
 		<% if @bot.botCiudads.count == 0 %>
