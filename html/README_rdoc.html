@@ -149,6 +149,44 @@ encuentran en app/views/&lt;modelo&gt;/&lt;vista&gt;.html.erb Por ejemplo,
 la vista de la acción (función) index del controlador de usuarios
 (users_controllers) está en app/views/users/index.html.erb</p>
 
+<p>III.- Actualización.</p>
+
+<p>Para actualizar este software en el servidor se deben seguir las siguientes
+instrucciones:</p>
+
+<p>1.- Subir los cambios a github:</p>
+<ul><li>
+<p>git add.</p>
+</li><li>
+<p>git commit -m “Comentario”</p>
+</li><li>
+<p>git pull</p>
+</li></ul>
+
+<p>2.- Descargar cambios al servior:</p>
+
+<p>En la carpeta del proyecto:</p>
+<ul><li>
+<p>git pull</p>
+</li></ul>
+
+<p>3.- Si se realizaron cambios en la base de datos:</p>
+
+<p>Actualizar base de datos</p>
+<ul><li>
+<p>rake db:migrate</p>
+</li></ul>
+
+<p>4.- Actualizar caché</p>
+<ul><li>
+<p>rake assets:precompile</p>
+</li></ul>
+
+<p>5.- Reiniciar servidor apache</p>
+<ul><li>
+<p>sudo /etc/init.d/apache restar</p>
+</li></ul>
+
 </div>
 
 
