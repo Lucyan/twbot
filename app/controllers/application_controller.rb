@@ -1,8 +1,9 @@
+# Controlador base, todas las acciones(funciones) que se definen aquí, son heredados por los otros controladores
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :autentificacion, :except => [:login, :registrar, :nuevo_usuario]
 
-  # verifica autentificación
+  # Verifica autentificación para enviarlo a login en caso de que la session esté expirada o no esté logeado
   def autentificacion
     if session[:login]
       if session[:last_seen] < 1.hour.ago
@@ -15,7 +16,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # Login
+  # Controlla logín en la aplicación, en caso de ser exitoso, genera session del usuario
   def login
     user = User.find_by_email(params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
@@ -28,13 +29,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # Logout
+  # Controla logout de la aplicación
   def logout
     reset_session
     redirect_to root_path
   end
 
-  # Formulario de Registro
+  # Despliega el formulario de registro
   def registrar
     if session[:login]
       redirect_to root_path
@@ -43,7 +44,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # Guarda Nuevo Usuario
+  # Controla el registro del usuario para guardarlo en la BD
   def nuevo_usuario
     @user = User.new(params[:user])
     @user.cantidad_bots = 1

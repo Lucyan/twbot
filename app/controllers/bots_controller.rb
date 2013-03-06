@@ -1,3 +1,4 @@
+# Controlador de los bots.
 class BotsController < ApplicationController
   before_filter :recuperar_bot, :only => [:editar, :actualizar, :bot_on, :bot_off, :palabras, :agregar_palabra, :eliminar, :guardar_palabra, :ciudades, :tweets, :tweet_detalle, :unfollow, :follow, :renovar, :plus]
 

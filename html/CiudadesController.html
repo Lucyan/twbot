@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class CiudadesController - App Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/ciudades_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-actualizar">#actualizar</a>
+    
+    <li><a href="#method-i-editar">#editar</a>
+    
+    <li><a href="#method-i-eliminar">#eliminar</a>
+    
+    <li><a href="#method-i-guardar">#guardar</a>
+    
+    <li><a href="#method-i-index">#index</a>
+    
+    <li><a href="#method-i-nueva">#nueva</a>
+    
+    <li><a href="#method-i-recuperar_ciudad">#recuperar_ciudad</a>
+    
+    <li><a href="#method-i-verifica_perfil">#verifica_perfil</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Twbot.html">Twbot</a>
+  
+    <li><a href="./Twbot/Application.html">Twbot::Application</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Bot.html">Bot</a>
+  
+    <li><a href="./BotCiudad.html">BotCiudad</a>
+  
+    <li><a href="./BotsController.html">BotsController</a>
+  
+    <li><a href="./BotsHelper.html">BotsHelper</a>
+  
+    <li><a href="./Ciudad.html">Ciudad</a>
+  
+    <li><a href="./CiudadesController.html">CiudadesController</a>
+  
+    <li><a href="./CiudadesHelper.html">CiudadesHelper</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PagesController.html">PagesController</a>
+  
+    <li><a href="./Palabra.html">Palabra</a>
+  
+    <li><a href="./Tweet.html">Tweet</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UsersController.html">UsersController</a>
+  
+    <li><a href="./UsersHelper.html">UsersHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class CiudadesController</h1>
+
+  <div id="description" class="description">
+    
+<p>Controlador de las ciudades</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-actualizar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">actualizar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Guarda ciudad actualizada</p>
+          
+
+          
+          <div class="method-source-code" id="actualizar-source">
+            <pre><span class="ruby-comment"># File app/controllers/ciudades_controller.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">actualizar</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@ciudad</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:ciudad</span>])
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">ciudades_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Ciudad Actualizada&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Error en los datos ingresados&quot;</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">'edit'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- actualizar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- actualizar-method -->
+
+    
+      <div id="method-i-editar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">editar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Desplica formulario para editar ciudad</p>
+          
+
+          
+          <div class="method-source-code" id="editar-source">
+            <pre><span class="ruby-comment"># File app/controllers/ciudades_controller.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">editar</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- editar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- editar-method -->
+
+    
+      <div id="method-i-eliminar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eliminar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Elimina una ciudad</p>
+          
+
+          
+          <div class="method-source-code" id="eliminar-source">
+            <pre><span class="ruby-comment"># File app/controllers/ciudades_controller.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eliminar</span>
+  <span class="ruby-ivar">@ciudad</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">ciudades_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Ciudad Eliminada&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eliminar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eliminar-method -->
+
+    
+      <div id="method-i-guardar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guardar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Guarda la ciudad nueva</p>
+          
+
+          
+          <div class="method-source-code" id="guardar-source">
+            <pre><span class="ruby-comment"># File app/controllers/ciudades_controller.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guardar</span>
+  <span class="ruby-ivar">@ciudad</span> = <span class="ruby-constant">Ciudad</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:ciudad</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@ciudad</span>.<span class="ruby-identifier">valid?</span>
+    <span class="ruby-ivar">@ciudad</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">ciudades_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Nueva Ciudad Agregada&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Error en los datos ingresados&quot;</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">'nueva'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guardar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guardar-method -->
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Index del controlador, muestra todas las ciudades</p>
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/ciudades_controller.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-ivar">@ciudades</span> = <span class="ruby-constant">Ciudad</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+      <div id="method-i-nueva" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nueva</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Despliega formulario para agregar nueva ciudad</p>
+          
+
+          
+          <div class="method-source-code" id="nueva-source">
+            <pre><span class="ruby-comment"># File app/controllers/ciudades_controller.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nueva</span>
+  <span class="ruby-ivar">@ciudad</span> = <span class="ruby-constant">Ciudad</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nueva-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nueva-method -->
+
+    
+      <div id="method-i-recuperar_ciudad" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recuperar_ciudad</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Recupera una ciudad especifica</p>
+          
+
+          
+          <div class="method-source-code" id="recuperar_ciudad-source">
+            <pre><span class="ruby-comment"># File app/controllers/ciudades_controller.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">recuperar_ciudad</span>
+  <span class="ruby-ivar">@ciudad</span> = <span class="ruby-constant">Ciudad</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- recuperar_ciudad-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- recuperar_ciudad-method -->
+
+    
+      <div id="method-i-verifica_perfil" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verifica_perfil</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Verficia perfil de usuario, solo los administradores pueden acceder a las
+funciones de ciudades</p>
+          
+
+          
+          <div class="method-source-code" id="verifica_perfil-source">
+            <pre><span class="ruby-comment"># File app/controllers/ciudades_controller.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verifica_perfil</span>
+  <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:login</span>]);
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">perfil</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verifica_perfil-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verifica_perfil-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

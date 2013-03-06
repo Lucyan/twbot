@@ -1,5 +1,6 @@
+# Helper de la aplicación, se definene funciones que están disponibles en toda la app
 module ApplicationHelper
-	# Return the full title on a per-page basis.
+	# Devuelve el titulo para cada vista
 	def full_title(page_title)
 		base_title = NOMBRE_APP
 		if page_title.empty?
