@@ -1,5 +1,5 @@
-Tue, 05 Mar 2013 21:15:10 -0300
-README.rdoc	Tue, 05 Mar 2013 21:15:08 -0300
+Wed, 06 Mar 2013 21:52:28 -0300
+README.rdoc	Wed, 06 Mar 2013 21:45:21 -0300
 app/controllers/application_controller.rb	Tue, 05 Mar 2013 20:43:51 -0300
 app/controllers/bots_controller.rb	Tue, 05 Mar 2013 20:48:32 -0300
 app/controllers/ciudades_controller.rb	Tue, 05 Mar 2013 20:52:58 -0300
@@ -30,3 +30,8 @@ config/initializers/session_store.rb	Fri, 05 Oct 2012 02:56:27 -0300
 config/initializers/twitter.rb	Wed, 27 Feb 2013 21:53:47 -0300
 config/initializers/wrap_parameters.rb	Fri, 05 Oct 2012 02:56:27 -0300
 config/routes.rb	Thu, 28 Feb 2013 01:05:17 -0300
+bot/config.php	Wed, 27 Feb 2013 21:53:47 -0300
+bot/fechas.php	Wed, 27 Feb 2013 21:53:47 -0300
+bot/follow.php	Thu, 28 Feb 2013 01:16:52 -0300
+bot/twitter.php	Fri, 05 Oct 2012 02:56:27 -0300
+bot/unfollow.php	Thu, 28 Feb 2013 01:17:18 -0300

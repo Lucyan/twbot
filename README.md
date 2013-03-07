@@ -37,7 +37,16 @@ Nota: las vistas de las acciones (funciones) de cada controlador se encuentran e
 Por ejemplo, la vista de la acción (función) index del controlador de usuarios (users_controllers) está en app/views/users/index.html.erb
 
 
-III.- Actualización.
+III.- Base de Datos.
+--------------
+
+- Tipo: MySql
+- BD: projects_twbot
+- Usuario: projects_ror
+- Password: Quy~s2323#@as
+
+
+IV.- Actualización.
 --------------
 
 Para actualizar este software en el servidor se deben seguir las siguientes instrucciones:
