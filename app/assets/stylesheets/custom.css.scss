@@ -15,7 +15,6 @@ body{
 	background: white;
 	position: relative;
 	margin: 0 auto;
-	padding-bottom: 30px;
 }	
 
 section {
@@ -488,12 +487,16 @@ img.adornobottom{
 /* Clientes  */
 #clientes{
 	height: 300px;
+	border-top: 1px solid gray;
+	background: #F7F7F7;
+	width: 100%;
 }
 
 #clientes h2{
 	font-size: 22pt;
 	font-style: italic;
 	font-weight: bold;
+	margin-top: 50px;
 	margin-bottom: 50px;
 }
 
