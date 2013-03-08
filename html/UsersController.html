@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class UsersController - App Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/users_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-editar">#editar</a>
+    
+    <li><a href="#method-i-eliminar">#eliminar</a>
+    
+    <li><a href="#method-i-guardar_editado">#guardar_editado</a>
+    
+    <li><a href="#method-i-index">#index</a>
+    
+    <li><a href="#method-i-ver">#ver</a>
+    
+    <li><a href="#method-i-verifica_perfil">#verifica_perfil</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Twbot.html">Twbot</a>
+  
+    <li><a href="./Twbot/Application.html">Twbot::Application</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Bot.html">Bot</a>
+  
+    <li><a href="./BotCiudad.html">BotCiudad</a>
+  
+    <li><a href="./BotsController.html">BotsController</a>
+  
+    <li><a href="./BotsHelper.html">BotsHelper</a>
+  
+    <li><a href="./Ciudad.html">Ciudad</a>
+  
+    <li><a href="./CiudadesController.html">CiudadesController</a>
+  
+    <li><a href="./CiudadesHelper.html">CiudadesHelper</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PagesController.html">PagesController</a>
+  
+    <li><a href="./Palabra.html">Palabra</a>
+  
+    <li><a href="./Tweet.html">Tweet</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UsersController.html">UsersController</a>
+  
+    <li><a href="./UsersHelper.html">UsersHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class UsersController</h1>
+
+  <div id="description" class="description">
+    
+<p>Controlador de usuarios</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-editar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">editar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Editar Usuario</p>
+          
+
+          
+          <div class="method-source-code" id="editar-source">
+            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">editar</span>
+  <span class="ruby-ivar">@usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- editar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- editar-method -->
+
+    
+      <div id="method-i-eliminar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eliminar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Elimina Usuarios del Sistema</p>
+          
+
+          
+          <div class="method-source-code" id="eliminar-source">
+            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eliminar</span>
+  <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">bots</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">bot</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">bot</span>.<span class="ruby-identifier">palabras</span>.<span class="ruby-identifier">destroy_all</span>
+    <span class="ruby-identifier">bot</span>.<span class="ruby-identifier">botCiudads</span>.<span class="ruby-identifier">destroy_all</span>
+    <span class="ruby-identifier">bot</span>.<span class="ruby-identifier">tweets</span>.<span class="ruby-identifier">destroy_all</span>
+    <span class="ruby-identifier">bot</span>.<span class="ruby-identifier">destroy</span>
+  }
+  <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">destroy</span>    
+  <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">usuarios_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Bot Eliminado&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eliminar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eliminar-method -->
+
+    
+      <div id="method-i-guardar_editado" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guardar_editado</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Guardar Usuario editado</p>
+          
+
+          
+          <div class="method-source-code" id="guardar_editado-source">
+            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guardar_editado</span>
+  <span class="ruby-ivar">@usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@usuario</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:user</span>])
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">usuarios_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Usuario Actualizado&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">'editar'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guardar_editado-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guardar_editado-method -->
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Listado de Usuarios</p>
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-ivar">@usuarios</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+      <div id="method-i-ver" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ver</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ver Usuario</p>
+          
+
+          
+          <div class="method-source-code" id="ver-source">
+            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ver</span>
+      <span class="ruby-ivar">@usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ver-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ver-method -->
+
+    
+      <div id="method-i-verifica_perfil" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verifica_perfil</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Verficia perfil de usuario</p>
+          
+
+          
+          <div class="method-source-code" id="verifica_perfil-source">
+            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verifica_perfil</span>
+  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:login</span>])
+      
+      <span class="ruby-keyword">begin</span>
+      <span class="ruby-ivar">@auth_user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">perfil</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+              <span class="ruby-keyword">if</span> <span class="ruby-identifier">action_name</span> <span class="ruby-operator">!=</span> <span class="ruby-string">'ver'</span>
+                      <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>)
+              <span class="ruby-keyword">else</span>        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@auth_user</span> <span class="ruby-operator">!=</span> <span class="ruby-ivar">@user</span>
+                      <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>)      
+                      <span class="ruby-keyword">end</span>        
+              <span class="ruby-keyword">end</span>         
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">rescue</span>
+              <span class="ruby-keyword">if</span> <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">perfil</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+                      <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>)
+              <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verifica_perfil-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verifica_perfil-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

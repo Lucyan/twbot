@@ -1,3 +1,4 @@
+# Controlador de usuarios
 class UsersController < ApplicationController
   protect_from_forgery
   before_filter :verifica_perfil
@@ -6,21 +7,21 @@ class UsersController < ApplicationController
   def verifica_perfil
     @user = User.find(session[:login])
 	
-	begin
-	@auth_user = User.find(params[:id])
-	if @user.perfil != 1
-		if action_name != 'ver'
-			redirect_to(bot_path)
-		else	if @auth_user != @user
-			redirect_to(bot_path)	
-			end	
-		end		
-	end
-	rescue
-		if @user.perfil != 1
-			redirect_to(bot_path)
-		end
-	end
+  	begin
+  	@auth_user = User.find(params[:id])
+  	if @user.perfil != 1
+  		if action_name != 'ver'
+  			redirect_to(bot_path)
+  		else	if @auth_user != @user
+  			redirect_to(bot_path)	
+  			end	
+  		end		
+  	end
+  	rescue
+  		if @user.perfil != 1
+  			redirect_to(bot_path)
+  		end
+  	end
   end
 
   # Listado de Usuarios
@@ -59,8 +60,5 @@ class UsersController < ApplicationController
     else
       render 'editar'
     end
-  end
-  
-  
-  
+  end  
 end

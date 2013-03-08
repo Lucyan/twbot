@@ -1,1 +1,73 @@
-WIP
+FollowKeywords
+--------------
+
+I.- Bot.
+
+- Lenguaje: PHP.
+- Ubicación: $proyecto/bot/
+- Descripción: Los script PHP del bot se encargan de hacer follow y unfollow según las configuraciones de cada bot, estos corren cada 1 hora las 24 horas del día repartiendoce en: follow.php de 08:00 hrs. a 23:00 hrs.; unfollow.php de 00:00 hrs. a 07:00 hrs.
+
+Archivos:
+
+1.- config.php: Contiene la configuración de la base de datos del sistema y las claves obtenidas de la app de twitter.
+
+2.- fechas.php: Contiene la función que calcula las fechas de caducidad de los bot.
+
+3.- twitter.php: Librería utilizada para la conexión con la api de twitter.
+
+4.- ambiente.php: Contiene variables de ambiente para el bot.
+
+5.- follow.php: Se ejecuta desde las 08:00 hrs. a las 23:00 hrs. cada una hora, se encarga de seguir a cuentas de twitter según la configuración de cada bot.
+
+6.- unfollow.php: Se ejecuta desde las 00:00 hrs. hasta las 07:00 hrs. cada una hora, se encarga de hacer unfollow de los usuarios que no han seguido de vuelta.
+
+
+II.- Web.
+
+Lenguaje: Ruby.
+Framework: Rails.
+Arquitectura: MVC.
+Ubicación: $proyecto/
+Descripción: Software que se encarga de manejar la aplicación web donde los usuarios pueden manejar sus bots.
+
+
+Nota: las vistas de las acciones (funciones) de cada controlador se encuentran en app/views/<modelo>/<vista>.html.erb
+Por ejemplo, la vista de la acción (función) index del controlador de usuarios (users_controllers) está en app/views/users/index.html.erb
+
+
+III.- Base de Datos.
+
+- Tipo: MySql
+- BD: projects_twbot
+- Usuario: projects_ror
+- Password: Quy~s2323#@as
+
+IV.- Actualización.
+
+Para actualizar este software en el servidor se deben seguir las siguientes instrucciones:
+
+1.- Subir los cambios a github:
+
+- git add.
+- git commit -m "Comentario"
+- git pull
+
+2.- Descargar cambios al servior:
+
+En la carpeta del proyecto:
+
+- git pull
+
+3.- Si se realizaron cambios en la base de datos:
+
+Actualizar base de datos
+
+- rake db:migrate
+
+4.- Actualizar caché
+
+- rake assets:precompile
+
+5.- Reiniciar servidor apache
+
+- sudo /etc/init.d/apache restar

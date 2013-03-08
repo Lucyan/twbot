@@ -1,3 +1,4 @@
+# Modelo de usuarios
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :cantidad_bots, :perfil
   has_many :bots

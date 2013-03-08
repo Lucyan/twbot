@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class BotsController - App Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/bots_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-actualizar">#actualizar</a>
+    
+    <li><a href="#method-i-agregar_ciudad">#agregar_ciudad</a>
+    
+    <li><a href="#method-i-agregar_palabra">#agregar_palabra</a>
+    
+    <li><a href="#method-i-auth">#auth</a>
+    
+    <li><a href="#method-i-bot_off">#bot_off</a>
+    
+    <li><a href="#method-i-bot_on">#bot_on</a>
+    
+    <li><a href="#method-i-ciudades">#ciudades</a>
+    
+    <li><a href="#method-i-editar">#editar</a>
+    
+    <li><a href="#method-i-eliminar">#eliminar</a>
+    
+    <li><a href="#method-i-eliminar_ciudad">#eliminar_ciudad</a>
+    
+    <li><a href="#method-i-eliminar_palabra">#eliminar_palabra</a>
+    
+    <li><a href="#method-i-fail_auth">#fail_auth</a>
+    
+    <li><a href="#method-i-follow">#follow</a>
+    
+    <li><a href="#method-i-guardar">#guardar</a>
+    
+    <li><a href="#method-i-guardar_palabra">#guardar_palabra</a>
+    
+    <li><a href="#method-i-index">#index</a>
+    
+    <li><a href="#method-i-nuevo">#nuevo</a>
+    
+    <li><a href="#method-i-palabras">#palabras</a>
+    
+    <li><a href="#method-i-plus">#plus</a>
+    
+    <li><a href="#method-i-recuperar_bot">#recuperar_bot</a>
+    
+    <li><a href="#method-i-renovar">#renovar</a>
+    
+    <li><a href="#method-i-tweet_detalle">#tweet_detalle</a>
+    
+    <li><a href="#method-i-tweets">#tweets</a>
+    
+    <li><a href="#method-i-unfollow">#unfollow</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Twbot.html">Twbot</a>
+  
+    <li><a href="./Twbot/Application.html">Twbot::Application</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Bot.html">Bot</a>
+  
+    <li><a href="./BotCiudad.html">BotCiudad</a>
+  
+    <li><a href="./BotsController.html">BotsController</a>
+  
+    <li><a href="./BotsHelper.html">BotsHelper</a>
+  
+    <li><a href="./Ciudad.html">Ciudad</a>
+  
+    <li><a href="./CiudadesController.html">CiudadesController</a>
+  
+    <li><a href="./CiudadesHelper.html">CiudadesHelper</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PagesController.html">PagesController</a>
+  
+    <li><a href="./Palabra.html">Palabra</a>
+  
+    <li><a href="./Tweet.html">Tweet</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UsersController.html">UsersController</a>
+  
+    <li><a href="./UsersHelper.html">UsersHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class BotsController</h1>
+
+  <div id="description" class="description">
+    
+<p>Controlador de los bots.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-actualizar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">actualizar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Formulario Editar</p>
+          
+
+          
+          <div class="method-source-code" id="actualizar-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">actualizar</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:bot</span>])
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Bot Actualizado&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">'editar'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- actualizar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- actualizar-method -->
+
+    
+      <div id="method-i-agregar_ciudad" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">agregar_ciudad</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Agregar <a href="Ciudad.html">Ciudad</a> al <a href="Bot.html">Bot</a></p>
+          
+
+          
+          <div class="method-source-code" id="agregar_ciudad-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 182</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">agregar_ciudad</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">ciudad</span> = <span class="ruby-constant">Ciudad</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id_ciudad</span>])
+
+    <span class="ruby-constant">BotCiudad</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">bot_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>], <span class="ruby-identifier">ciudad_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:id_ciudad</span>])
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_ciudades_path</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>]), <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;Ciudad Agregada&quot;</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Error: #{e}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- agregar_ciudad-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- agregar_ciudad-method -->
+
+    
+      <div id="method-i-agregar_palabra" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">agregar_palabra</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Despliega Formulario para agregar <a href="Palabra.html">Palabra</a> a un
+<a href="Bot.html">Bot</a></p>
+          
+
+          
+          <div class="method-source-code" id="agregar_palabra-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">agregar_palabra</span>
+  <span class="ruby-ivar">@palabra</span> = <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">palabras</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- agregar_palabra-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- agregar_palabra-method -->
+
+    
+      <div id="method-i-auth" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">auth</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Obtiene autentificación de Twitter para el <a href="Bot.html">Bot</a></p>
+          
+
+          
+          <div class="method-source-code" id="auth-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">auth</span>
+      <span class="ruby-comment">#raise request.env[&quot;omniauth.auth&quot;].to_yaml </span>
+      <span class="ruby-keyword">begin</span>
+             <span class="ruby-identifier">auth</span> = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&quot;omniauth.auth&quot;</span>]
+             <span class="ruby-keyword">if</span> <span class="ruby-identifier">auth</span>[<span class="ruby-string">'credentials'</span>][<span class="ruby-string">'token'</span>]
+      <span class="ruby-identifier">existe</span> = <span class="ruby-constant">Bot</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-identifier">tw_cuenta</span><span class="ruby-operator">:</span> <span class="ruby-identifier">auth</span>[<span class="ruby-string">'info'</span>][<span class="ruby-string">'nickname'</span>]})
+      <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;The object is #{existe}&quot;</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">existe</span>
+        <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;ERROR: la cuenta que estas tratando de utilizar ya esta registrada en nuestros sistemas, recuerda que no puedes duplicar cuentas. Si estas seguro que deseas utilizar esta cuenta, contactate con los administradores&quot;</span>
+        <span class="ruby-identifier">render</span> <span class="ruby-string">'nuevo'</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@bot</span> = <span class="ruby-constant">Bot</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">nombre</span><span class="ruby-operator">:</span> <span class="ruby-identifier">auth</span>[<span class="ruby-string">'info'</span>][<span class="ruby-string">'name'</span>], <span class="ruby-identifier">tw_cuenta</span><span class="ruby-operator">:</span> <span class="ruby-identifier">auth</span>[<span class="ruby-string">'info'</span>][<span class="ruby-string">'nickname'</span>], <span class="ruby-identifier">tw_token</span><span class="ruby-operator">:</span> <span class="ruby-identifier">auth</span>[<span class="ruby-string">'credentials'</span>][<span class="ruby-string">'token'</span>], <span class="ruby-identifier">tw_secret</span><span class="ruby-operator">:</span> <span class="ruby-identifier">auth</span>[<span class="ruby-string">'credentials'</span>][<span class="ruby-string">'secret'</span>], <span class="ruby-identifier">estado</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>)
+        <span class="ruby-identifier">render</span> <span class="ruby-string">'nuevo2'</span>
+      <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">else</span>
+                  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Error al autorizar al bot, intentalo nuevamente&quot;</span>
+      <span class="ruby-identifier">render</span> <span class="ruby-string">'nuevo'</span>
+                <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exc</span>
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Error :#{exc.message}&quot;</span>
+                <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Error al autorizar al bot, intentalo nuevamente&quot;</span>
+                <span class="ruby-identifier">render</span> <span class="ruby-string">'nuevo'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- auth-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- auth-method -->
+
+    
+      <div id="method-i-bot_off" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bot_off</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Apagar bot</p>
+          
+
+          
+          <div class="method-source-code" id="bot_off-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bot_off</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">estado</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Bot Apagado&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- bot_off-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- bot_off-method -->
+
+    
+      <div id="method-i-bot_on" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bot_on</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Encender bot</p>
+          
+
+          
+          <div class="method-source-code" id="bot_on-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bot_on</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">estado</span> = <span class="ruby-value">1</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Bot Encendido&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- bot_on-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- bot_on-method -->
+
+    
+      <div id="method-i-ciudades" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ciudades</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Muestra las ciudades asociadas al bot y disponibles para modificación</p>
+          
+
+          
+          <div class="method-source-code" id="ciudades-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ciudades</span>
+  <span class="ruby-ivar">@ciudades</span> = <span class="ruby-constant">Ciudad</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ciudades-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ciudades-method -->
+
+    
+      <div id="method-i-editar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">editar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Formulario Editar</p>
+          
+
+          
+          <div class="method-source-code" id="editar-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">editar</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- editar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- editar-method -->
+
+    
+      <div id="method-i-eliminar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eliminar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Elimina <a href="Bot.html">Bot</a> del Sistema</p>
+          
+
+          
+          <div class="method-source-code" id="eliminar-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eliminar</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">palabras</span>.<span class="ruby-identifier">destroy_all</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">botCiudads</span>.<span class="ruby-identifier">destroy_all</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">tweets</span>.<span class="ruby-identifier">destroy_all</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Bot Eliminado&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eliminar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eliminar-method -->
+
+    
+      <div id="method-i-eliminar_ciudad" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eliminar_ciudad</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Eliminar <a href="Ciudad.html">Ciudad</a> del <a href="Bot.html">Bot</a></p>
+          
+
+          
+          <div class="method-source-code" id="eliminar_ciudad-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eliminar_ciudad</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-ivar">@botciudad</span> = <span class="ruby-constant">BotCiudad</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id_botciudad</span>])
+    <span class="ruby-ivar">@botciudad</span>.<span class="ruby-identifier">destroy</span>
+    <span class="ruby-identifier">bot</span> = <span class="ruby-constant">Bot</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">bot</span>.<span class="ruby-identifier">botCiudads</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">bot</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">estado</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_ciudades_path</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>]), <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;Ciudad Eliminada&quot;</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Error: #{e}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eliminar_ciudad-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eliminar_ciudad-method -->
+
+    
+      <div id="method-i-eliminar_palabra" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eliminar_palabra</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Elimina <a href="Palabra.html">Palabra</a> de un <a href="Bot.html">Bot</a></p>
+          
+
+          
+          <div class="method-source-code" id="eliminar_palabra-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 166</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eliminar_palabra</span>
+  <span class="ruby-ivar">@palabra</span> = <span class="ruby-constant">Palabra</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:palabra_id</span>])
+  <span class="ruby-ivar">@palabra</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">bot</span> = <span class="ruby-constant">Bot</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">bot</span>.<span class="ruby-identifier">palabras</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">bot</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">estado</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_palabras_path</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>]), <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Palabra Eliminada&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eliminar_palabra-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eliminar_palabra-method -->
+
+    
+      <div id="method-i-fail_auth" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fail_auth</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>En caso de fallar la autentificación, muestra error en pantalla</p>
+          
+
+          
+          <div class="method-source-code" id="fail_auth-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fail_auth</span>
+      <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Error al autorizar al bot, intentalo nuevamente&quot;</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">'nuevo'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fail_auth-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fail_auth-method -->
+
+    
+      <div id="method-i-follow" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">follow</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>follow a personas manualmente</p>
+          
+
+          
+          <div class="method-source-code" id="follow-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">follow</span>
+  <span class="ruby-ivar">@twitter</span> = <span class="ruby-constant">Twitter</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-value">:oauth_token</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">tw_token</span>,
+    <span class="ruby-value">:oauth_token_secret</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">tw_secret</span>
+  )
+
+  <span class="ruby-ivar">@tweet</span> = <span class="ruby-constant">Tweet</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:tweet</span>])
+
+  <span class="ruby-ivar">@twitter</span>.<span class="ruby-identifier">follow</span>(<span class="ruby-ivar">@tweet</span>.<span class="ruby-identifier">tw_usuario</span>)
+  <span class="ruby-ivar">@tweet</span>.<span class="ruby-identifier">estado</span> = <span class="ruby-value">1</span>
+  <span class="ruby-ivar">@tweet</span>.<span class="ruby-identifier">save</span>
+
+  <span class="ruby-identifier">mensaje</span> = <span class="ruby-string">&quot;Se sigue a &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@tweet</span>.<span class="ruby-identifier">tw_usuario</span>
+  <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_tweets_path</span>(<span class="ruby-ivar">@bot</span>), <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-identifier">mensaje</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- follow-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- follow-method -->
+
+    
+      <div id="method-i-guardar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guardar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Guarda el nuevo <a href="Bot.html">Bot</a> en la base de datos</p>
+          
+
+          
+          <div class="method-source-code" id="guardar-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guardar</span>
+      <span class="ruby-ivar">@bot</span> = <span class="ruby-constant">Bot</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:bot</span>])
+      <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">estado</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">siguiendo</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">seguidores</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">palabra_indice</span> = <span class="ruby-value">1</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">palabra_maximo</span> = <span class="ruby-value">1</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">ciudad_indice</span> = <span class="ruby-value">1</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">user</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:login</span>]
+  <span class="ruby-ivar">@twitter</span> = <span class="ruby-constant">Twitter</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-value">:oauth_token</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">tw_token</span>,
+    <span class="ruby-value">:oauth_token_secret</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">tw_secret</span>
+  )
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">followers_count</span> = <span class="ruby-ivar">@twitter</span>.<span class="ruby-identifier">user</span>(<span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">tw_cuenta</span>).<span class="ruby-identifier">follower_count</span>
+
+  <span class="ruby-comment"># Se agrega fecha de renovación para controlar uso por fechas (1 mes)</span>
+  <span class="ruby-identifier">fecha</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">fecha_renovacion</span> = <span class="ruby-identifier">fecha</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%d-%m-%Y&quot;</span>)
+
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">valid?</span>
+              <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">save</span>
+              <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Bot creado OK&quot;</span>)
+      <span class="ruby-keyword">else</span>
+              <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Los datos del BOT no son validos, intenta nuevamente&quot;</span>
+                <span class="ruby-identifier">render</span> <span class="ruby-string">'nuevo2'</span>
+      <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guardar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guardar-method -->
+
+    
+      <div id="method-i-guardar_palabra" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guardar_palabra</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Guarda nueva <a href="Palabra.html">Palabra</a> a un <a
+href="Bot.html">Bot</a></p>
+          
+
+          
+          <div class="method-source-code" id="guardar_palabra-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guardar_palabra</span>
+  <span class="ruby-ivar">@palabra</span> = <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">palabras</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:palabra</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@palabra</span>.<span class="ruby-identifier">valid?</span>
+    <span class="ruby-ivar">@palabra</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_palabras_path</span>(<span class="ruby-ivar">@bot</span>), <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Palabra Agregada&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:error</span>] = <span class="ruby-string">&quot;Ingresa una palabra o frase valida&quot;</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">'agregar_palabra'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guardar_palabra-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guardar_palabra-method -->
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Despliega Listado todos los Bots</p>
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-identifier">session</span>[<span class="ruby-value">:filtro</span>] = <span class="ruby-keyword">nil</span>
+      <span class="ruby-comment">#@bots = Bot.all</span>
+  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:login</span>]);
+  <span class="ruby-ivar">@bots</span> = <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">bots</span>;
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-string">'usuario'</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">perfil</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-string">'usuario'</span>]);
+      <span class="ruby-ivar">@bots</span> = <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">bots</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+      <div id="method-i-nuevo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nuevo</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Despliega Formulario para gregar nuevo <a href="Bot.html">Bot</a></p>
+          
+
+          
+          <div class="method-source-code" id="nuevo-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nuevo</span>
+  <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:login</span>]);
+  <span class="ruby-identifier">bots</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">bots</span>
+  <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Cantidad bot :#{bots.count}&quot;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">bots</span>.<span class="ruby-identifier">count</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">cantidad_bots</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;No puedes agregar mas bots, tu cuenta esta limitada a #{bots.count} bots.&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nuevo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nuevo-method -->
+
+    
+      <div id="method-i-palabras" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">palabras</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Despliega listado de Palabras de un <a href="Bot.html">Bot</a></p>
+          
+
+          
+          <div class="method-source-code" id="palabras-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">palabras</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- palabras-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- palabras-method -->
+
+    
+      <div id="method-i-plus" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">plus</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Activa o desactiva Plus en bot</p>
+          
+
+          
+          <div class="method-source-code" id="plus-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 277</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">plus</span>
+  <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Bot antes: #{@bot.plus}&quot;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">plus</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">plus</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">mensaje</span> = <span class="ruby-string">&quot;Plus Activado&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">plus</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">mensaje</span> = <span class="ruby-string">&quot;Plus Desactivado&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Bot despues: #{@bot.plus}&quot;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-value">:back</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">mensaje</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-value">:back</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Error al intentar Activar/Desactivar Plus, intentalo nuevamente&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- plus-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- plus-method -->
+
+    
+      <div id="method-i-recuperar_bot" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recuperar_bot</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Recupera bot según parametro de url</p>
+          
+
+          
+          <div class="method-source-code" id="recuperar_bot-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">recuperar_bot</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-ivar">@bot</span> = <span class="ruby-constant">Bot</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+
+    <span class="ruby-comment"># Verifica si el usuario que está consultando el bot corresponde al de la sessión (solo lso admin pueden ver todo)</span>
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:login</span>]);
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">perfil</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">user_id</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">id</span>
+        <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;No tienes acceso al bot solicitado&quot;</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_path</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Error: #{e}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- recuperar_bot-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- recuperar_bot-method -->
+
+    
+      <div id="method-i-renovar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">renovar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>renueva bots por 31 días</p>
+          
+
+          
+          <div class="method-source-code" id="renovar-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">renovar</span>
+  <span class="ruby-comment"># Se agrega fecha de renovación para controlar uso por fechas (1 mes)</span>
+  <span class="ruby-identifier">fecha</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">fecha_renovacion</span> = <span class="ruby-identifier">fecha</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%d-%m-%Y&quot;</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-value">:back</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Bot Renovado&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">redirect_to</span>(<span class="ruby-value">:back</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Error al intentar renovar, reintentalo&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- renovar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- renovar-method -->
+
+    
+      <div id="method-i-tweet_detalle" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tweet_detalle</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Muestra detalle de un tweet</p>
+          
+
+          
+          <div class="method-source-code" id="tweet_detalle-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 225</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tweet_detalle</span>
+  <span class="ruby-ivar">@tweet</span> = <span class="ruby-constant">Tweet</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:tweet_id</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- tweet_detalle-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- tweet_detalle-method -->
+
+    
+      <div id="method-i-tweets" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tweets</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Mustra listado de las personas que se han seguido</p>
+          
+
+          
+          <div class="method-source-code" id="tweets-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tweets</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">session</span>[<span class="ruby-value">:filtro</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:filtro</span>]
+    <span class="ruby-identifier">params</span>[<span class="ruby-value">:filtro</span>] = <span class="ruby-identifier">session</span>[<span class="ruby-value">:filtro</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@filtro</span> = <span class="ruby-string">''</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:filtro</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:filtro</span>] <span class="ruby-operator">!=</span> <span class="ruby-string">''</span>
+    <span class="ruby-ivar">@tweets</span> = <span class="ruby-constant">Tweet</span>.<span class="ruby-identifier">paginate</span>(<span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">'bot_id = ? and estado = ?'</span>, <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">params</span>[<span class="ruby-value">:filtro</span>]], <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'created_at DESC'</span>, <span class="ruby-value">:per_page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">20</span>, <span class="ruby-value">:page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>])
+    <span class="ruby-ivar">@filtro</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:filtro</span>]
+    <span class="ruby-identifier">session</span>[<span class="ruby-value">:filtro</span>] = <span class="ruby-identifier">params</span>[<span class="ruby-value">:filtro</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">session</span>[<span class="ruby-value">:filtro</span>] = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@tweets</span> = <span class="ruby-constant">Tweet</span>.<span class="ruby-identifier">paginate</span>(<span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">'bot_id = ?'</span>, <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">id</span>], <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'created_at DESC'</span>, <span class="ruby-value">:per_page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">20</span>, <span class="ruby-value">:page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- tweets-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- tweets-method -->
+
+    
+      <div id="method-i-unfollow" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unfollow</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>unfollow a personas manualmente</p>
+          
+
+          
+          <div class="method-source-code" id="unfollow-source">
+            <pre><span class="ruby-comment"># File app/controllers/bots_controller.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unfollow</span>
+  <span class="ruby-ivar">@twitter</span> = <span class="ruby-constant">Twitter</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-value">:oauth_token</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">tw_token</span>,
+    <span class="ruby-value">:oauth_token_secret</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@bot</span>.<span class="ruby-identifier">tw_secret</span>
+  )
+
+  <span class="ruby-ivar">@tweet</span> = <span class="ruby-constant">Tweet</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:tweet</span>])
+
+  <span class="ruby-ivar">@twitter</span>.<span class="ruby-identifier">unfollow</span>(<span class="ruby-ivar">@tweet</span>.<span class="ruby-identifier">tw_usuario</span>)
+  <span class="ruby-ivar">@tweet</span>.<span class="ruby-identifier">estado</span> = <span class="ruby-value">4</span>
+  <span class="ruby-ivar">@tweet</span>.<span class="ruby-identifier">save</span>
+
+  <span class="ruby-identifier">mensaje</span> = <span class="ruby-string">&quot;Dejo de seguir a &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@tweet</span>.<span class="ruby-identifier">tw_usuario</span>
+  <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">bot_tweets_path</span>(<span class="ruby-ivar">@bot</span>), <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-identifier">mensaje</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unfollow-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unfollow-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
