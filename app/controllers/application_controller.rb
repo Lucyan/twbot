@@ -52,7 +52,10 @@ class ApplicationController < ActionController::Base
     @user.perfil = 0
     if @user.valid?
       @user.save
-      redirect_to(bot_path, :notice => "Usuario creado, ya puedes hacer login")
+      # Login automatico al registrar
+      session[:login] = @user
+      session[:last_seen] = Time.now
+      redirect_to bot_path, :notice => "Registro OK, Bienvenido"
     else
       flash[:error] = "Error en los datos ingresados"
       render 'bots/registrar'
