@@ -34,4 +34,15 @@ Twbot::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # EMail
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'reframe.cl',
+    :user_name            => 'nicolasduran@reframe.cl',
+    :password             => 'agustin8',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
 end

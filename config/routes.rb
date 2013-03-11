@@ -33,6 +33,7 @@
   match '/bot/:id/tweets/detalle/:tweet_id' => 'bots#tweet_detalle', :as => '/bot/tweet/detalle'
   match '/bot/:id/tweets/unfollow/:tweet' => 'bots#unfollow', :as => '/bot/tweets/unfollow'
   match '/bot/:id/tweets/follow/:tweet' => 'bots#follow', :as => '/bot/tweets/follow'
+  match "/bot/solicitar" => "bots#solicitar", :as => '/bot/solicitar'
 
   match "/auth/:provider/callback" => "bots#auth"
   match "/auth/failure" => "bots#fail_auth"
@@ -44,8 +45,8 @@
   match "/ciudades/editar/:id" => "ciudades#actualizar", :as => '/ciudades/editar', :via => :put
   match "/ciudades/eliminar/:id" => "ciudades#eliminar", :as => '/ciudades/eliminar'
 
-  match "/registro" => "bots#registrar", :as => '/registro', :via => :get
-  match "/registro" => "bots#nuevo_usuario", :as => '/registro', :via => :post
+  match "/registro/:tipo" => "bots#registrar", :as => '/registro', :via => :get
+  match "/registro/:tipo" => "bots#nuevo_usuario", :as => '/registro', :via => :post
   
   
   match "/usuarios" => "users#index"

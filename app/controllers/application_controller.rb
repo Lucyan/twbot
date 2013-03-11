@@ -48,6 +48,12 @@ class ApplicationController < ActionController::Base
   def nuevo_usuario
     @user = User.new(params[:user])
     @user.cantidad_bots = 1
+
+    # Según tipo de registro
+    if params[:tipo] == "plus"
+      @user.registro = true
+    end
+
     # Se agrega perfil de usuario (0)
     @user.perfil = 0
     if @user.valid?
@@ -55,6 +61,7 @@ class ApplicationController < ActionController::Base
       # Login automatico al registrar
       session[:login] = @user
       session[:last_seen] = Time.now
+      UserMailer.welcome_email(@user).deliver
       redirect_to bot_path, :notice => "Registro OK, Bienvenido"
     else
       flash[:error] = "Error en los datos ingresados"

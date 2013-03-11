@@ -5,7 +5,7 @@
 	
 	<%= link_to "", bot_nuevo_path, {:class => "crearbots", :title=> "Crear FollowKeywords" }  %>
 	<%= link_to "", bot_path, {:class => "listabots", :title=> "Listado de FollowKeywords" }  %>
-	
+	<%= link_to "Solicitar Bot", bot_solicitar_path, class: "btn btn-mini btn-success", title: "Solicitar un nuevo FollowKeywords" %>
 	<% user = User.find(session[:login]); %>
 	<% if user.perfil == 1 %>
 	

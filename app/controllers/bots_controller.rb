@@ -54,6 +54,15 @@ class BotsController < ApplicationController
     @bot.palabra_maximo = 1
     @bot.ciudad_indice = 1
     @bot.user = session[:login]
+
+    # Registro Plus para el primer bot
+    user = User.find(session[:login]);
+    if user.registro
+      @bot.plus = true
+      user.registro = false
+      user.save
+    end
+
     @twitter = Twitter::Client.new(
       :oauth_token => @bot.tw_token,
       :oauth_token_secret => @bot.tw_secret
@@ -280,6 +289,13 @@ class BotsController < ApplicationController
     if @bot.plus == false
       @bot.plus = true
       mensaje = "Plus Activado"
+
+      # Aviso a administradores del upgrade a Plus
+      user = User.find(session[:login]);
+      if user.perfil == 0
+        UserMailer.upgrade_bot(user, @bot).deliver
+      end
+
     else
       @bot.plus = false
       mensaje = "Plus Desactivado"
@@ -292,5 +308,12 @@ class BotsController < ApplicationController
     else
       redirect_to(:back, :notice => "Error al intentar Activar/Desactivar Plus, intentalo nuevamente")
     end
+  end
+
+  # Solicitar nuevo bot
+  def solicitar
+    user = User.find(session[:login]);
+    UserMailer.solicitar_bot(user).deliver
+    redirect_to :back, :notice => "Se ha solicitado un nuevo bot para tu cuenta, espera respuesta del administrador"
   end
 end

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    </head>
+    <body>
+      <h1>Upgrade de Bot a Plus</h1>
+      <p>
+        Datos de usuario:<br/><br/>
+        Nombre: <%= @user.name %><br/>
+        Email: <%= @user.email %><br/><br/>
+
+        Datos del bot:<br/>
+        Nombre: <%= @bot.nombre %><br/>
+        Cuenta: <%= link_to "@#{@bot.tw_cuenta}", "http://twitter.com/#{@bot.tw_cuenta}" %>
+      </p>
+    </body>
+</html>

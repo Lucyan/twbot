@@ -1,5 +1,4 @@
 
-
 <div class="center hero-unit">
   	<h1>FollowKeyWords en el Sistema</h1>
 	<%= render "layouts/menu" %>
@@ -37,11 +36,13 @@
                     </div>
                     <div>
                         Plus: <%= (bot.plus == true) ? 'Si'  : 'No'; %>
-                        <% if @user.perfil == 1 %>
-                            <% if (bot.plus == true) %>
-                                <%= link_to "Desactivar", plus_bot_path(bot), class: "btn btn-mini btn-danger", title: "Desactivar Plus" %>
+                        <% if (bot.plus == true) %>
+                            <%= link_to "Desactivar", plus_bot_path(bot), class: "btn btn-mini btn-danger", title: "Desactivar Plus" %>
+                        <% else %>
+                            <% if @user.perfil == 0 %>
+                                <%= link_to "Upgrade", plus_bot_path(bot), class: "btn btn-mini btn-success", title: "Upgrade Plus", :confirm => "Quieres hacer un UPGRADE a PLUS? Con esto podrás acceder a entregar mensajes personalizados y aumentar tu conversión en nuevos Followers. \n\nCosto Mensual $200.000" %>
                             <% else %>
-                                <%= link_to "Activar", plus_bot_path(bot), class: "btn btn-mini btn-success", title: "Activar Plus" %>
+                                <%= link_to "Upgrade", plus_bot_path(bot), class: "btn btn-mini btn-success", title: "Upgrade Plus" %>
                             <% end %>
                         <% end %>
                     </div>

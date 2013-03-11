@@ -2,11 +2,13 @@
 <div class="center hero-unit">
   	<h1>Perfil de Usuario</h1>
 	<%= render "layouts/menu" %>
-  	
+  	<% if flash[:notice] %>
+      	<p class="notice"><%= flash[:notice] %></p>
+    <% end %>
 	<div class="perfil">
 		<p><b>Nombre: </b><%=@usuario.name%></p>
 		<p><b>E-mail: </b><%=@usuario.email%></p>
-		<p><b>Cantidad de FollowKeywords: </b> <%=@usuario.bots.count%> de <%=@usuario.cantidad_bots %>
+		<p><b>Cantidad de FollowKeywords: </b> <%=@usuario.bots.count%> de <%=@usuario.cantidad_bots %>  <%= link_to "Solicitar", bot_solicitar_path, class: "btn btn-mini btn-success", title: "Solicitar un nuevo FollowKeywords" %></p>
 	</div>
 	</div>
 </div>
