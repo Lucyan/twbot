@@ -40,7 +40,7 @@ class BotsController < ApplicationController
     logger.debug "Cantidad bot :#{bots.count}"
 
     if bots.count == user.cantidad_bots
-      redirect_to(bot_path, :notice => "No puedes agregar mas bots, tu cuenta esta limitada a #{bots.count} bots.")
+      redirect_to(bot_path, :notice => "No puedes agregar otro Twitter, tu cuenta esta limitada a #{bots.count} FollowKeywords. Puedes solicitar un nuevo FollowKeywords en el boton \"Solicitar un nuevo FollowKeywords\" o desde tu perfil")
     end
   end
 
