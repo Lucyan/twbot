@@ -6,4 +6,9 @@ class Bot < ActiveRecord::Base
   has_many :botCiudads
   has_many :tweets
   belongs_to :user
+
+  validates :cantidad_seguir,  presence: true, 
+  			numericality: { only_integer: true, 
+  							greater_than_or_equal_to: 1,
+  							less_than_or_equal_to: 100 }
 end

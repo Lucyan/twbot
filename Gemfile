@@ -9,6 +9,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'twitter'
 gem 'will_paginate', '~> 3.0'
 gem 'therubyracer', require: "v8"
+gem 'rack', '1.4.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

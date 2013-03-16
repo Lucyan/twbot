@@ -593,3 +593,7 @@ th, td{
 }
 
 
+/* Errores */
+div.field_with_errors input {
+	border-color: #FE2E2E;
+}
