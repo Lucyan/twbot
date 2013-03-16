@@ -11,6 +11,9 @@ require('config.php');
 require('ambiente.php');
 include('twitter.php');
 
+// Limite de mensajes por hora
+$max_por_hora = 5;
+
 // Si el ambiente está seteado en 1, guarda log
 if ($ambiente != 0) {
     $log = "------------------------------------------------------------------------\n";
@@ -30,6 +33,9 @@ while ($bot = mysql_fetch_assoc($bots)) {
     $fecha_renovacion = date("d/m/Y",strtotime($bot['fecha_renovacion']));
     // Se obtiene la fecha actual
     $fecha_actual = date("d/m/Y",time());
+
+    // Seteo el número de mensajes enviados por el bot en 0
+    $mensajes_enviados = 0;
 
     // Compara las fechas
     if (compararFechas($fecha_actual, $fecha_renovacion) > 30) {
@@ -273,11 +279,19 @@ while ($bot = mysql_fetch_assoc($bots)) {
 
                                                  // Add: Versión Plus -- Envía mensaje al usuario recien seguido, dependiendo si el bot es plus y si tiene mensaje en la palabra o en el bot (palabra tiene prioridad sobre el bot)
                                                 if ($plus == true) {
-                                                     // Add: funcionalidad mensajes
-                                                    if ($mensaje_palabra != "") {
-                                                        $twitter->statusesUpdate('@' . $usuarios['from_user'] . ' ' . $mensaje_palabra);
-                                                    } elseif ($mensaje_bot != "") {
-                                                        $twitter->statusesUpdate('@' . $usuarios['from_user'] . ' ' . $mensaje_bot);
+                                                    // Se verifica si se ha enviado el maximo de mensajes por hora
+                                                    if ($mensajes_enviados < $max_por_hora) {
+                                                        // Si no se han enviado los mensajes, se procede a enviar
+                                                        // Add: funcionalidad mensajes
+                                                        if ($mensaje_palabra != "") {
+                                                            $twitter->statusesUpdate('@' . $usuarios['from_user'] . ' ' . $mensaje_palabra);
+                                                            // Se aumenta el contador de mensajes enviados
+                                                            $mensajes_enviados++;
+                                                        } elseif ($mensaje_bot != "") {
+                                                            $twitter->statusesUpdate('@' . $usuarios['from_user'] . ' ' . $mensaje_bot);
+                                                            // Se aumenta el contador de mensajes enviados
+                                                            $mensajes_enviados++;
+                                                        }
                                                     }
                                                 }
 

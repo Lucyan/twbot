@@ -10,6 +10,9 @@ require('config.php');
 require('ambiente.php');
 include('twitter.php');
 
+// Limite de mensajes por hora
+$max_por_hora = 5;
+
 // Si el ambiente está seteado en 1, guarda log
 if ($ambiente != 0) {
     $log = "------------------------------------------------------------------------\n";
@@ -34,6 +37,9 @@ while ($bot = mysql_fetch_assoc($bots)) {
     // Setea las llaves del bot que se está leyendo
     $twitter->setOAuthToken($bot['tw_token']);
     $twitter->setOAuthTokenSecret($bot['tw_secret']);
+
+    // Seteo el número de mensajes enviados por el bot en 0
+    $mensajes_enviados = 0;
 
     // Add: funcionalidad mensajes
     $mensaje_bot = $bot['frase_cuando_siguen'];
@@ -86,8 +92,14 @@ while ($bot = mysql_fetch_assoc($bots)) {
                 // Add: funcionalidad mensajes - Envía mensaje al usuario que siguio, si está seteado en el bot
                 if ($row['mensaje_enviado'] == 0) {
                     if ($plus == true) {
-                        if ($mensaje_bot != '') {
-                            $twitter->statusesUpdate('@' . $row['tw_usuario'] . ' ' . $mensaje_bot);
+                        // Se verifica si se han enviado el máximo de mensajes por hora
+                        if ($mensajes_enviados < $max_por_hora) {
+                            // Si no se han enviados, se verifica si hay mensaje para enviar
+                            if ($mensaje_bot != '') {
+                                $twitter->statusesUpdate('@' . $row['tw_usuario'] . ' ' . $mensaje_bot);
+                                // Se aumenta el contador de mensajes enviados
+                                $mensajes_enviados++;
+                            }
                         }
                     }
                     

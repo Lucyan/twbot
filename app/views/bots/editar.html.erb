@@ -24,8 +24,14 @@
 						<%= form.text_field :verificar_seguido, {class: "span1"} %><span class="add-on">Dias</span>
 					</div>
 				</div>
-
 				<% if (@bot.plus == true) %>
+					<br/>
+					<div>
+						<h3>Funcionalidades Plus</h3>
+						Puedes enviar mensajes personalizados a los usuarios cuando se comienza a seguir a una persona o cuando esta persona comienza a seguir tu cuenta.<br/>
+						Por seguridad, solo se enviaran 5 mensajes por hora (para todos los casos).
+					</div>
+					<br/>
 					<div class="field control-group">
 						<%= form.label :frase_al_seguir, "Frase de respuesta cuando el Followkeyword sigue a una persona" %>
 						<div class="input-prepend">

@@ -13,6 +13,13 @@
 					<%= form.text_field :palabra %> 
 				</div>
 				<% if (@bot.plus == true) %>
+					<br/>
+					<div>
+						<h3>Funcionalidades Plus</h3>
+						Puedes enviar mensajes personalizados a los usuarios cuando se encuentre un tweet con la palabra ingresada y se comience a seguir.<br/>
+						Por seguridad, solo se enviaran 5 mensajes por hora (para todos los casos).
+					</div>
+					<br/>
 					<div class="field control-group numero">
 						<%= form.label :frase %>
 						<%= form.text_field :frase %> 
