@@ -9,6 +9,5 @@ class Bot < ActiveRecord::Base
 
   validates :cantidad_seguir,  presence: true, 
   			numericality: { only_integer: true, 
-  							greater_than_or_equal_to: 1,
-  							less_than_or_equal_to: 100 }
+  							greater_than_or_equal_to: 1 }
 end

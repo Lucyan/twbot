@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   # Listado de Usuarios
   def index
     @usuarios = User.all
+    @variables = Variable.all
   end
 
   # Elimina Usuarios del Sistema
@@ -60,5 +61,15 @@ class UsersController < ApplicationController
     else
       render 'editar'
     end
-  end  
+  end 
+
+  # Guarda valor de nueva variable
+  def guardar_variable
+    variable = Variable.find(params[:id])
+    if variable.update_attributes(params[:variable])
+      redirect_to(:back, :notice => "Variable actualizada")
+    else
+      redirect_to(:back, :notice => "Error al intentar guardar variable, intentalo nuevamente")
+    end
+  end
 end

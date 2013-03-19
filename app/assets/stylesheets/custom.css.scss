@@ -592,6 +592,25 @@ th, td{
 	font-weight: bold;
 }
 
+/* Administración */
+.administracion {
+	h1 {
+		font-size: 30px;
+		line-height: 1;
+		color: inherit;
+		letter-spacing: -1px;
+		font-weight: bold;
+		padding: 10px;
+		text-align: center;
+	}
+	.admin-variables {
+		table {
+			width: 600px;
+			margin: 0 auto;
+		}
+	}
+}
+
 
 /* Errores */
 div.field_with_errors input {

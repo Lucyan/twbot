@@ -10,8 +10,12 @@ require('config.php');
 require('ambiente.php');
 include('twitter.php');
 
+// Obtención de limite de mensajes por hora (definido por admin)
+$query = mysql_query("SELECT * FROM variables WHERE variables.key = 'limite_seguir';");
+$variable = mysql_fetch_assoc($query);
+
 // Limite de mensajes por hora
-$max_por_hora = 5;
+$max_por_hora = $variable['value'];;
 
 // Si el ambiente está seteado en 1, guarda log
 if ($ambiente != 0) {

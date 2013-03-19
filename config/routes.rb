@@ -61,6 +61,8 @@
   match "/renovar/:id" => "bots#renovar", :as => '/renovar/bot'
   match "/plus/:id" => "bots#plus", :as => '/plus/bot'
 
+  match "/variable/:id" => "users#guardar_variable", :as => '/variable', :via => :put
+
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -3,6 +3,9 @@
   	<h1>Nuevo Followkeyword</h1>
 	<%= render "layouts/menu" %>
   	<h2>Si esta no es la cuenta que deseas utilizar, <a href="https://twitter.com/logout" target="_blank">deslogeate</a> de twitter en otra ventana y <%=link_to "vuelve a empezar", bot_nuevo_path %></h2>
+  	<% if flash[:notice] %>
+      	<p class="notice"><%= flash[:notice] %></p>
+    <% end %>
   	<div class="form_puntos origen">
 		<%= form_for @bot, :url => bot_nuevo_path do |form| %>
 			<fieldset class="fields">
@@ -29,7 +32,7 @@
 				</div>
 
 				<div class="field control-group">
-					<%= form.label :cantidad_seguir, "Máximo a seguir por hora (Entre 1 y 100)" %>
+					<%= form.label :cantidad_seguir, "Máximo a seguir por hora (Entre 1 y #{@variable[0]['value']})" %>
 					<%= form.text_field :cantidad_seguir, {value: "10"} %>
 				</div>
 

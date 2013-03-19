@@ -3,6 +3,9 @@
   	<h1>Editar Followkeyword</h1>
 	<%= render "layouts/menu" %>
   	<h2>Cuenta vinculada: <%= link_to "@"+@bot.tw_cuenta, "http://twitter.com/"+@bot.tw_cuenta %></h2>
+  	<% if flash[:notice] %>
+      	<p class="notice"><%= flash[:notice] %></p>
+    <% end %>
   	<div class="form_puntos origen">
 		<%= form_for @bot, :url => bot_editar_path(@bot) do |form| %>
 			<fieldset class="fields">
@@ -12,7 +15,7 @@
 				</div>
 
 				<div class="field control-group">
-					<%= form.label :cantidad_seguir, "Máximo a seguir por hora (Entre 1 y 100)" %>
+					<%= form.label :cantidad_seguir, "Máximo a seguir por hora (Entre 1 y #{@variable[0]['value']})" %>
 					<div class="input-prepend">
 						<%= form.text_field :cantidad_seguir %>
 					</div>
@@ -29,7 +32,7 @@
 					<div>
 						<h3>Funcionalidades Plus</h3>
 						Puedes enviar mensajes personalizados a los usuarios cuando se comienza a seguir a una persona o cuando esta persona comienza a seguir tu cuenta.<br/>
-						Por seguridad, solo se enviaran 5 mensajes por hora (para todos los casos).
+						Por seguridad, solo se enviaran <%= @variable[1]['value'] %> mensajes por hora (para todos los casos).
 					</div>
 					<br/>
 					<div class="field control-group">

@@ -73,18 +73,26 @@ class BotsController < ApplicationController
     fecha = Time.new
     @bot.fecha_renovacion = fecha.strftime("%d-%m-%Y")
 
-  	if @bot.valid?
-  		@bot.save
-  		redirect_to(bot_path, :notice => "Bot creado OK")
-  	else
-  		flash[:error] = "Los datos del BOT no son validos, intenta nuevamente"
-		  render 'nuevo2'
-  	end
+    # Restinge según variable de sistema
+    @variable = Variable.all
+    if Integer(@variable[0]['value']) >= Integer(params[:bot]['cantidad_seguir'])
+      if @bot.valid?
+        @bot.save
+        redirect_to(bot_path, :notice => "Bot creado OK")
+      else
+        flash[:error] = "Los datos del BOT no son validos, intenta nuevamente"
+        render 'nuevo2'
+      end
+    else
+      flash[:notice] = "ERROR: El Maximo a seguir es mayor a lo permitido"
+      render 'nuevo2'
+    end
   end
 
   # Obtiene autentificación de Twitter para el Bot
   def auth
   	#raise request.env["omniauth.auth"].to_yaml 
+    @variable = Variable.all
   	begin
 	  	auth = request.env["omniauth.auth"]
 	  	if auth['credentials']['token']
@@ -125,13 +133,20 @@ class BotsController < ApplicationController
 
   # Formulario Editar
   def editar
+    @variable = Variable.all
   end
 
   # Formulario Editar
   def actualizar
-    if @bot.update_attributes(params[:bot])
-      redirect_to(bot_path, :notice => "Bot Actualizado")
+    @variable = Variable.all
+    if Integer(@variable[0]['value']) >= Integer(params[:bot]['cantidad_seguir'])
+      if @bot.update_attributes(params[:bot])
+        redirect_to(bot_path, :notice => "Bot Actualizado")
+      else
+        render 'editar'
+      end
     else
+      flash[:notice] = "ERROR: El Maximo a seguir es mayor a lo permitido"
       render 'editar'
     end
   end
@@ -156,11 +171,13 @@ class BotsController < ApplicationController
 
   # Despliega Formulario para agregar Palabra a un Bot
   def agregar_palabra
+    @variable = Variable.all
     @palabra = @bot.palabras.new
   end
 
   # Guarda nueva Palabra a un Bot
   def guardar_palabra
+    @variable = Variable.all
     @palabra = @bot.palabras.new(params[:palabra])
     if @palabra.valid?
       @palabra.save
