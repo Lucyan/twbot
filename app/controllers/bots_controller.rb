@@ -78,7 +78,7 @@ class BotsController < ApplicationController
     if Integer(@variable[0]['value']) >= Integer(params[:bot]['cantidad_seguir'])
       if @bot.valid?
         @bot.save
-        redirect_to(bot_path, :notice => "Bot creado OK")
+        redirect_to(bot_palabras_path(@bot), notice: 'Agrega palabras o frases a buscar')
       else
         flash[:error] = "Los datos del BOT no son validos, intenta nuevamente"
         render 'nuevo2'
